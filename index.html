@@ -1,0 +1,2189 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>إلى كوتي ❤️</title>
+
+<style>
+
+/* =========================
+   الأساسيات
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #25002d,
+            #08000c 60%,
+            #020003
+        );
+
+    color: white;
+
+    font-family:
+        Arial,
+        Tahoma,
+        sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   شاشة البداية
+========================= */
+
+.intro {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #4a0b4d,
+            #17001c 45%,
+            #030005
+        );
+
+    transition:
+        opacity 1s ease,
+        visibility 1s ease;
+}
+
+.intro.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.intro-content {
+    width: 90%;
+    max-width: 650px;
+
+    animation:
+        introAppear 2s ease;
+}
+
+.intro-small {
+    color: #ddb7d6;
+    font-size: 18px;
+
+    margin-bottom: 15px;
+}
+
+.intro-name {
+    font-size:
+        clamp(48px, 13vw, 95px);
+
+    font-weight: bold;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff8bc8,
+            #ffffff,
+            #d88cff,
+            #ff8bc8
+        );
+
+    background-size: 300%;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+
+    animation:
+        gradientText 5s infinite linear;
+}
+
+.intro-subtitle {
+    margin-top: 15px;
+
+    color: #ffc8e5;
+
+    font-size: 22px;
+}
+
+.main-button {
+    margin-top: 35px;
+
+    padding:
+        16px 35px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.25);
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff4d9d,
+            #9b35ff
+        );
+
+    color: white;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 30px
+        rgba(255,70,170,.35);
+
+    transition: .3s;
+}
+
+.main-button:hover {
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 45px
+        rgba(255,70,170,.65);
+}
+
+
+/* =========================
+   النجوم
+========================= */
+
+.stars {
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 0;
+
+    background-image:
+        radial-gradient(
+            white 1px,
+            transparent 1px
+        );
+
+    background-size: 90px 90px;
+
+    opacity: .35;
+
+    animation:
+        starsMove 20s linear infinite;
+}
+
+
+/* =========================
+   الصفحة
+========================= */
+
+.page {
+    position: relative;
+
+    z-index: 2;
+
+    opacity: 0;
+
+    transition:
+        opacity 2s ease;
+}
+
+.page.show {
+    opacity: 1;
+}
+
+.container {
+    width: 92%;
+    max-width: 760px;
+
+    margin: auto;
+
+    padding: 80px 0;
+}
+
+
+/* =========================
+   الأقسام والكروت
+========================= */
+
+.section {
+    min-height: 80vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 30px 0;
+}
+
+.card {
+    width: 100%;
+
+    padding:
+        42px 25px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.09),
+            rgba(255,255,255,.035)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.15);
+
+    backdrop-filter:
+        blur(15px);
+
+    box-shadow:
+        0 20px 70px
+        rgba(0,0,0,.45);
+
+    transform:
+        translateY(40px);
+
+    opacity: 0;
+
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s ease;
+}
+
+.card.visible {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================
+   النصوص
+========================= */
+
+h1 {
+    font-size:
+        clamp(38px, 9vw, 58px);
+
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size:
+        clamp(28px, 7vw, 42px);
+
+    color: #ffb7dc;
+
+    margin-bottom: 25px;
+}
+
+p {
+    color: #f7eaf2;
+
+    font-size: 19px;
+
+    line-height: 2.1;
+}
+
+.highlight {
+    color: #ffb7dc;
+
+    font-weight: bold;
+}
+
+.emoji-heart {
+    font-size: 75px;
+
+    animation:
+        heartbeat 1.5s infinite;
+
+    margin-bottom: 20px;
+}
+
+.typing {
+    min-height: 200px;
+}
+
+
+/* =========================
+   الشعر
+========================= */
+
+.poem {
+    font-size: 19px;
+
+    line-height: 2.3;
+
+    color: #f9eaf2;
+}
+
+.poem strong {
+    color: #ffd1e7;
+}
+
+
+/* =========================
+   العداد
+========================= */
+
+.counter {
+    display: inline-block;
+
+    margin:
+        5px 0 12px;
+
+    padding:
+        8px 22px;
+
+    border-radius: 50px;
+
+    background:
+        rgba(255,120,190,.12);
+
+    border:
+        1px solid
+        rgba(255,150,210,.2);
+
+    color: #ffb7dc;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    transition: .4s;
+}
+
+.counter.pop {
+    animation:
+        counterPop .5s ease;
+}
+
+.counter-message {
+    font-size: 15px;
+
+    color: #cda7c7;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   الأسباب الأربعة
+========================= */
+
+.reasons {
+    display: grid;
+
+    gap: 15px;
+
+    margin-top: 25px;
+}
+
+.reason {
+    min-height: 75px;
+
+    padding: 20px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255,255,255,.06);
+
+    border:
+        1px solid
+        rgba(255,255,255,.09);
+
+    cursor: pointer;
+
+    user-select: none;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 12px;
+
+    transition:
+        transform .3s ease,
+        background .3s ease,
+        box-shadow .3s ease;
+}
+
+.reason:hover {
+    transform:
+        translateY(-5px);
+
+    background:
+        rgba(255,255,255,.11);
+
+    box-shadow:
+        0 10px 30px
+        rgba(255,80,170,.15);
+}
+
+.reason:active {
+    transform:
+        scale(.96);
+}
+
+.reason.locked .lock {
+    font-size: 32px;
+
+    transition: .4s;
+}
+
+.reason-text {
+    display: none;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+}
+
+.reason.unlocked {
+    background:
+        rgba(255,80,170,.14);
+
+    box-shadow:
+        0 0 30px
+        rgba(255,80,170,.2);
+}
+
+.reason.unlocked .lock {
+    animation:
+        unlockAnimation .5s ease;
+}
+
+.reason.unlocked .reason-text {
+    display: block;
+
+    animation:
+        reasonAppear .7s ease;
+}
+
+
+/* =========================
+   آخر حاجة يا كوتي
+========================= */
+
+.last-surprise {
+    display: none;
+
+    margin-top: 25px;
+}
+
+.last-surprise.show {
+    display: block;
+
+    animation:
+        finalAppear 1.2s ease;
+}
+
+.last-box {
+    min-height: 85px;
+
+    padding: 22px;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,80,170,.12),
+            rgba(150,60,255,.10)
+        );
+
+    border:
+        1px solid
+        rgba(255,150,220,.2);
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.last-box:hover {
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        0 0 35px
+        rgba(255,80,180,.2);
+}
+
+.last-box.opened {
+    cursor: default;
+}
+
+.last-lock {
+    font-size: 34px;
+}
+
+.last-title {
+    font-size: 20px;
+
+    color: #ffb7dc;
+
+    font-weight: bold;
+
+    margin-top: 5px;
+}
+
+.last-content {
+    display: none;
+
+    margin-top: 20px;
+
+    animation:
+        reasonAppear .9s ease;
+}
+
+.last-box.opened .last-content {
+    display: block;
+}
+
+.last-box.opened .last-lock {
+    animation:
+        unlockAnimation .5s ease;
+}
+
+
+/* =========================
+   القلوب عند الضغط
+========================= */
+
+.click-heart {
+    position: fixed;
+
+    pointer-events: none;
+
+    z-index: 99999;
+
+    font-size: 25px;
+
+    animation:
+        heartExplosion
+        1.2s ease-out
+        forwards;
+}
+
+
+/* =========================
+   القلوب الطائرة
+========================= */
+
+.floating-heart {
+    position: fixed;
+
+    bottom: -50px;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    animation:
+        floatHeart
+        linear
+        forwards;
+}
+
+
+/* =========================
+   آخر لقطة
+========================= */
+
+.final-love {
+    min-height: 75vh;
+}
+
+.final-love-text {
+    font-size:
+        clamp(40px, 10vw, 80px);
+
+    font-weight: bold;
+
+    direction: ltr;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff75b9,
+            #ffffff,
+            #d98cff,
+            #ff75b9
+        );
+
+    background-size: 300%;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+
+    animation:
+        finalLoveAppear 2s ease,
+        gradientText 5s infinite linear;
+
+    text-shadow:
+        0 0 35px
+        rgba(255,100,190,.35);
+}
+
+
+/* =========================
+   الحركات
+========================= */
+
+@keyframes introAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            scale(.8);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1);
+    }
+
+}
+
+@keyframes gradientText {
+
+    0% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 300%;
+    }
+
+}
+
+@keyframes heartbeat {
+
+    0%,100% {
+        transform:
+            scale(1);
+    }
+
+    50% {
+        transform:
+            scale(1.15);
+    }
+
+}
+
+@keyframes starsMove {
+
+    from {
+        transform:
+            translateY(0);
+    }
+
+    to {
+        transform:
+            translateY(90px);
+    }
+
+}
+
+@keyframes heartExplosion {
+
+    0% {
+        opacity: 1;
+
+        transform:
+            translate(0,0)
+            scale(.5);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translate(
+                var(--x),
+                var(--y)
+            )
+            scale(1.4)
+            rotate(25deg);
+    }
+
+}
+
+@keyframes unlockAnimation {
+
+    0% {
+        transform:
+            scale(1);
+    }
+
+    50% {
+        transform:
+            scale(1.4)
+            rotate(-10deg);
+    }
+
+    100% {
+        transform:
+            scale(1)
+            rotate(0);
+    }
+
+}
+
+@keyframes reasonAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+@keyframes counterPop {
+
+    0% {
+        transform:
+            scale(1);
+    }
+
+    50% {
+        transform:
+            scale(1.25);
+    }
+
+    100% {
+        transform:
+            scale(1);
+    }
+
+}
+
+@keyframes finalAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            scale(.7)
+            translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+    }
+
+}
+
+@keyframes finalLoveAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            scale(.5);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1);
+    }
+
+}
+
+@keyframes floatHeart {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(-115vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================
+   الموبايل
+========================= */
+
+@media(max-width:600px) {
+
+    .container {
+        padding:
+            50px 0;
+    }
+
+    .card {
+        padding:
+            32px 20px;
+    }
+
+    p {
+        font-size: 17px;
+    }
+
+    .poem {
+        font-size: 17px;
+    }
+
+    .section {
+        min-height: 75vh;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     شاشة البداية
+========================= -->
+
+<div
+    class="intro"
+    id="intro">
+
+    <div class="intro-content">
+
+        <div class="intro-small">
+
+            في حاجة صغيرة عملتها
+            مخصوص لشخص مميز...
+
+        </div>
+
+
+        <div class="intro-name">
+
+            تسنيم
+
+        </div>
+
+
+        <div class="intro-subtitle">
+
+            أو زي ما بحب أناديكي...
+            يا كوتي ❤️
+
+        </div>
+
+
+        <button
+            class="main-button"
+            onclick="startExperience()">
+
+            ابدئي المفاجأة ✨
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<div class="stars"></div>
+
+
+<!-- =========================
+     الموقع
+========================= -->
+
+<main
+    class="page"
+    id="page">
+
+<div class="container">
+
+
+<!-- البداية -->
+
+<section class="section">
+
+<div class="card">
+
+<div class="emoji-heart">
+❤️
+</div>
+
+<h1>
+يا كوتي...
+</h1>
+
+<p>
+
+قبل ما تقري أي حاجة،
+عايزك تعرفي إن الصفحة دي
+مش مجرد موقع.
+
+<br><br>
+
+دي شوية كلام
+كان نفسي أقولهولك
+بطريقة مختلفة. 🥹❤️
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- الرسالة -->
+
+<section class="section">
+
+<div class="card">
+
+<h2>
+تسنيم... ❤️
+</h2>
+
+<p
+id="typing"
+class="typing">
+</p>
+
+</div>
+
+</section>
+
+
+<!-- أول مرة -->
+
+<section class="section">
+
+<div class="card">
+
+<div class="emoji-heart">
+✨
+</div>
+
+<h2>
+أول مرة شفتك فيها...
+</h2>
+
+<p>
+
+مش هكدب عليكي...
+
+<br><br>
+
+<span class="highlight">
+أنا اتصدمت 😂❤️
+</span>
+
+<br><br>
+
+مش عارف أوصف اللحظة دي
+إزاي،
+بس كأن عيني شافت حاجة
+مش كانت مستعدة لها أصلًا.
+
+<br><br>
+
+كأن قلبي قال لعقلي:
+
+<br>
+
+<span class="highlight">
+"هو الجمال ده بجد؟" 😂
+</span>
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- الأسباب -->
+
+<section class="section">
+
+<div class="card">
+
+<h2>
+ليه إنتِ مميزة؟ 🌷
+</h2>
+
+
+<div
+class="counter"
+id="reasonCounter">
+
+0 / 4 ❤️
+
+</div>
+
+
+<p
+id="counterMessage"
+class="counter-message">
+
+لسه في 4 أسباب مستخبيين... 👀
+
+</p>
+
+
+<div class="reasons">
+
+
+<!-- السبب 1 -->
+
+<div
+class="reason locked"
+onclick="unlockReason(this)">
+
+<div class="lock">
+🔒
+</div>
+
+<div class="reason-text">
+
+❤️
+لأن وجودك لوحده
+بيخلّي اليوم أحلى.
+
+</div>
+
+</div>
+
+
+<!-- السبب 2 -->
+
+<div
+class="reason locked"
+onclick="unlockReason(this)">
+
+<div class="lock">
+🔒
+</div>
+
+<div class="reason-text">
+
+😂
+لأنك تقدري تخليني
+أبتسم حتى من غير
+ما تحاولي.
+
+</div>
+
+</div>
+
+
+<!-- السبب 3 -->
+
+<div
+class="reason locked"
+onclick="unlockReason(this)">
+
+<div class="lock">
+🔒
+</div>
+
+<div class="reason-text">
+
+✨
+لأن فيكي حاجة
+مش عارف أوصفها
+بالكلام.
+
+</div>
+
+</div>
+
+
+<!-- السبب 4 -->
+
+<div
+class="reason locked"
+onclick="unlockReason(this)">
+
+<div class="lock">
+🔒
+</div>
+
+<div class="reason-text">
+
+🥹
+لأنك بقيتي شخص
+مهم جدًا بالنسبة لي.
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<!-- آخر حاجة -->
+
+<div
+id="lastSurprise"
+class="last-surprise">
+
+
+<div
+class="last-box"
+id="lastBox"
+onclick="openLastSurprise()">
+
+
+<div
+class="last-lock"
+id="lastLock">
+
+🔒
+
+</div>
+
+
+<div class="last-title">
+
+آخر حاجة يا كوتي... 👀❤️
+
+</div>
+
+
+<div
+class="last-content"
+id="lastContent">
+
+<p>
+
+<span class="highlight">
+
+إنتِ مميزة بالنسبالي،
+عشان معاكي حسيت إن في حد
+نفسي أفضل أشاركه تفاصيل أيامي،
+حتى الحاجات الصغيرة
+اللي مكنتش بفتكر
+إنها تستاهل تتحكي.
+
+</span>
+
+<br><br>
+
+❤️
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- الشعر -->
+
+<section class="section">
+
+<div class="card">
+
+<div class="emoji-heart">
+🌙
+</div>
+
+<h2>
+إلى تسنيم... ❤️
+</h2>
+
+
+<p class="poem">
+
+<strong>
+
+ما رأيتُها يومًا،
+ولم أعرف ملامحها،
+<br>
+
+حتى أتتني صورتُها…
+فارتبك القلب قبل العين.
+
+</strong>
+
+
+<br><br>
+
+
+توقّفتُ لحظة،
+وكأن شيئًا في داخلي قد صمت،
+
+<br>
+
+وقلبي انقبض من شدة الدهشة،
+
+<br>
+
+فلم أكن مستعدًا أن أرى
+هذا الجمال.
+
+
+<br><br>
+
+
+نظرتُ إليها…
+
+<br>
+
+فشعرتُ أنني أمام شيءٍ
+لا يشبه ما رأيت،
+
+<br>
+
+كأن قطعةً من الجنة
+
+<br>
+
+قد وصلت إلى الأرض
+دون أن تستأذن.
+
+
+<br><br>
+
+
+لم تكن الصدمةُ أنني
+رأيتُ فتاةً جميلة،
+
+<br>
+
+بل أنني اكتشفتُ أن الجمال
+
+<br>
+
+قد يكون أكبر من أن تصفه
+الكلمات.
+
+
+<br><br>
+
+
+كنتُ أظن أنني أعرف
+معنى «جميلة»،
+
+<br>
+
+حتى رأيتها…
+
+<br>
+
+فعرفتُ أنني كنتُ مخطئًا،
+
+
+<br><br>
+
+
+وأن بعض الوجوه لا تُوصف،
+
+<br>
+
+بل تجعل القلب يقف للحظة
+
+<br>
+
+وكأنه يقول:
+
+
+<br><br>
+
+
+<span class="highlight">
+
+ما هذا الجمال؟ ❤️
+
+</span>
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- النهاية -->
+
+<section class="section">
+
+<div class="card">
+
+<div class="emoji-heart">
+💗
+</div>
+
+<h2>
+ولو وصلتي لهنا...
+</h2>
+
+<p>
+
+يبقى المفاجأة نجحت 😂❤️
+
+<br><br>
+
+ومهما كتبت هنا،
+الكلام هيفضل أقل
+من اللي جوايا.
+
+<br><br>
+
+كل اللي كنت عايز أقوله:
+
+<br><br>
+
+<span class="highlight">
+
+أنا مبسوط إنك موجودة
+في حياتي يا تسنيم. ❤️
+
+</span>
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     آخر لقطة في الموقع
+========================= -->
+
+<section
+class="section final-love">
+
+<div class="card">
+
+<div class="final-love-text">
+
+I LOVE YOU T ❤️
+
+</div>
+
+</div>
+
+</section>
+
+
+</div>
+
+</main>
+
+
+<script>
+
+
+/* =========================
+   Web Audio API
+   صوت التِك التفاعلي
+========================= */
+
+let audioContext = null;
+
+
+function playClickSound() {
+
+    // إنشاء نظام الصوت عند أول تفاعل
+    if (!audioContext) {
+
+        const AudioContext =
+            window.AudioContext ||
+            window.webkitAudioContext;
+
+        if (!AudioContext) {
+            return;
+        }
+
+        audioContext =
+            new AudioContext();
+
+    }
+
+
+    // بعض المتصفحات توقف الصوت
+    // حتى يحدث تفاعل من المستخدم
+    if (
+        audioContext.state === "suspended"
+    ) {
+
+        audioContext.resume();
+
+    }
+
+
+    const oscillator =
+        audioContext.createOscillator();
+
+
+    const gain =
+        audioContext.createGain();
+
+
+    /*
+       نوع الصوت:
+       Sine = ناعم
+    */
+
+    oscillator.type =
+        "sine";
+
+
+    /*
+       بداية صوت التِك
+    */
+
+    oscillator.frequency.setValueAtTime(
+        720,
+        audioContext.currentTime
+    );
+
+
+    /*
+       نزول سريع في التردد
+       يعطي إحساس "تِك"
+    */
+
+    oscillator.frequency.exponentialRampToValueAtTime(
+        400,
+        audioContext.currentTime + 0.08
+    );
+
+
+    /*
+       رفع الصوت بسرعة
+    */
+
+    gain.gain.setValueAtTime(
+        0.0001,
+        audioContext.currentTime
+    );
+
+
+    gain.gain.exponentialRampToValueAtTime(
+        0.12,
+        audioContext.currentTime + 0.01
+    );
+
+
+    /*
+       اختفاء الصوت بسرعة
+    */
+
+    gain.gain.exponentialRampToValueAtTime(
+        0.0001,
+        audioContext.currentTime + 0.09
+    );
+
+
+    /*
+       توصيل الصوت
+    */
+
+    oscillator.connect(gain);
+
+    gain.connect(
+        audioContext.destination
+    );
+
+
+    /*
+       تشغيل الصوت
+    */
+
+    oscillator.start();
+
+
+    oscillator.stop(
+        audioContext.currentTime + 0.1
+    );
+
+}
+
+
+/* =========================
+   بدء التجربة
+========================= */
+
+function startExperience() {
+
+    const intro =
+        document.getElementById(
+            "intro"
+        );
+
+
+    const page =
+        document.getElementById(
+            "page"
+        );
+
+
+    /*
+       صوت خفيف عند البداية
+    */
+
+    playClickSound();
+
+
+    intro.classList.add(
+        "hide"
+    );
+
+
+    setTimeout(() => {
+
+        page.classList.add(
+            "show"
+        );
+
+    }, 700);
+
+
+    createHearts(30);
+
+
+    setTimeout(() => {
+
+        typeWriter();
+
+    }, 1000);
+
+}
+
+
+/* =========================
+   الكتابة
+========================= */
+
+function typeWriter() {
+
+    const text =
+        "يمكن مكنتش متوقع إن شخص يدخل حياتي بالصدفة، وبعدها يبقى وجوده من أجمل الحاجات فيها. لكن إنتِ عملتي كده يا تسنيم. بقيت أفرح لما أشوف رسالتك، وأبتسم من حاجات بسيطة بسببك، وألاقي نفسي بفكر فيكي من غير ما أخطط. يمكن مش بعرف دايمًا أقول كل اللي جوايا، لكن الحقيقة إن مكانتك عندي أكبر بكتير من الكلام. ❤️";
+
+
+    const element =
+        document.getElementById(
+            "typing"
+        );
+
+
+    let index = 0;
+
+
+    function write() {
+
+        if (
+            index <
+            text.length
+        ) {
+
+            element.innerHTML +=
+                text.charAt(index);
+
+            index++;
+
+
+            setTimeout(
+                write,
+                38
+            );
+
+        }
+
+    }
+
+
+    write();
+
+}
+
+
+/* =========================
+   عداد الأسباب
+========================= */
+
+let unlockedReasons = 0;
+
+
+/* =========================
+   فتح السبب
+========================= */
+
+function unlockReason(element) {
+
+    /*
+       منع إعادة فتح نفس السبب
+    */
+
+    if (
+        element.classList.contains(
+            "unlocked"
+        )
+    ) {
+
+        return;
+
+    }
+
+
+    /*
+       تشغيل صوت التِك
+    */
+
+    playClickSound();
+
+
+    /*
+       فتح القفل
+    */
+
+    element.classList.add(
+        "unlocked"
+    );
+
+
+    const lock =
+        element.querySelector(
+            ".lock"
+        );
+
+
+    lock.innerText =
+        "🔓";
+
+
+    /*
+       انفجار القلوب
+    */
+
+    heartExplosion(
+        element
+    );
+
+
+    /*
+       تحديث العداد
+    */
+
+    unlockedReasons++;
+
+
+    const counter =
+        document.getElementById(
+            "reasonCounter"
+        );
+
+
+    const message =
+        document.getElementById(
+            "counterMessage"
+        );
+
+
+    counter.innerText =
+        unlockedReasons +
+        " / 4 ❤️";
+
+
+    counter.classList.remove(
+        "pop"
+    );
+
+
+    void counter.offsetWidth;
+
+
+    counter.classList.add(
+        "pop"
+    );
+
+
+    /*
+       رسائل العداد
+    */
+
+    if (
+        unlockedReasons === 1
+    ) {
+
+        message.innerText =
+            "واحد اتفتح... ولسه 3 مستخبيين 👀❤️";
+
+    }
+
+
+    else if (
+        unlockedReasons === 2
+    ) {
+
+        message.innerText =
+            "نص الطريق... ولسه في سببين 💕";
+
+    }
+
+
+    else if (
+        unlockedReasons === 3
+    ) {
+
+        message.innerText =
+            "قربنا جدًا... سبب واحد بس باقي 👀✨";
+
+    }
+
+
+    else if (
+        unlockedReasons === 4
+    ) {
+
+        message.innerText =
+            "خلصتي كل الأسباب... بس في حاجة أخيرة 👀❤️";
+
+
+        /*
+           إظهار آخر خانة
+        */
+
+        setTimeout(() => {
+
+            const last =
+                document.getElementById(
+                    "lastSurprise"
+                );
+
+
+            last.classList.add(
+                "show"
+            );
+
+
+            createHearts(
+                25
+            );
+
+
+            /*
+               تحريك الصفحة إليها
+            */
+
+            setTimeout(() => {
+
+                last.scrollIntoView({
+                    behavior:
+                        "smooth",
+
+                    block:
+                        "center"
+                });
+
+            }, 400);
+
+        }, 600);
+
+    }
+
+}
+
+
+/* =========================
+   فتح آخر مفاجأة
+========================= */
+
+function openLastSurprise() {
+
+    const box =
+        document.getElementById(
+            "lastBox"
+        );
+
+
+    /*
+       منع تكرار الفتح
+    */
+
+    if (
+        box.classList.contains(
+            "opened"
+        )
+    ) {
+
+        return;
+
+    }
+
+
+    /*
+       صوت التِك
+    */
+
+    playClickSound();
+
+
+    /*
+       فتح الخانة
+    */
+
+    box.classList.add(
+        "opened"
+    );
+
+
+    document.getElementById(
+        "lastLock"
+    ).innerText =
+        "🔓";
+
+
+    /*
+       قلوب
+    */
+
+    heartExplosion(
+        box
+    );
+
+
+    createHearts(
+        70
+    );
+
+}
+
+
+/* =========================
+   انفجار القلوب
+========================= */
+
+function heartExplosion(element) {
+
+    const rect =
+        element.getBoundingClientRect();
+
+
+    const hearts = [
+
+        "❤️",
+        "💗",
+        "💖",
+        "💕",
+        "💘",
+        "💓"
+
+    ];
+
+
+    for (
+        let i = 0;
+        i < 20;
+        i++
+    ) {
+
+        const heart =
+            document.createElement(
+                "div"
+            );
+
+
+        heart.className =
+            "click-heart";
+
+
+        heart.innerText =
+            hearts[
+                Math.floor(
+                    Math.random()
+                    * hearts.length
+                )
+            ];
+
+
+        heart.style.left =
+            (
+                rect.left +
+                rect.width / 2
+            ) +
+            "px";
+
+
+        heart.style.top =
+            (
+                rect.top +
+                rect.height / 2
+            ) +
+            "px";
+
+
+        const angle =
+            Math.random()
+            * Math.PI
+            * 2;
+
+
+        const distance =
+            70 +
+            Math.random()
+            * 140;
+
+
+        const x =
+            Math.cos(angle)
+            * distance;
+
+
+        const y =
+            Math.sin(angle)
+            * distance;
+
+
+        heart.style.setProperty(
+            "--x",
+            x + "px"
+        );
+
+
+        heart.style.setProperty(
+            "--y",
+            y + "px"
+        );
+
+
+        document.body.appendChild(
+            heart
+        );
+
+
+        setTimeout(() => {
+
+            heart.remove();
+
+        }, 1300);
+
+    }
+
+}
+
+
+/* =========================
+   قلوب طائرة
+========================= */
+
+function createHearts(number) {
+
+    const emojis = [
+
+        "❤️",
+        "💗",
+        "💖",
+        "💕",
+        "💘",
+        "🌷",
+        "✨"
+
+    ];
+
+
+    for (
+        let i = 0;
+        i < number;
+        i++
+    ) {
+
+        const heart =
+            document.createElement(
+                "div"
+            );
+
+
+        heart.className =
+            "floating-heart";
+
+
+        heart.innerText =
+            emojis[
+                Math.floor(
+                    Math.random()
+                    * emojis.length
+                )
+            ];
+
+
+        heart.style.left =
+            Math.random()
+            * 100 +
+            "vw";
+
+
+        heart.style.fontSize =
+            (
+                15 +
+                Math.random()
+                * 25
+            ) +
+            "px";
+
+
+        heart.style.animationDuration =
+            (
+                4 +
+                Math.random()
+                * 5
+            ) +
+            "s";
+
+
+        document.body.appendChild(
+            heart
+        );
+
+
+        setTimeout(() => {
+
+            heart.remove();
+
+        }, 10000);
+
+    }
+
+}
+
+
+/* =========================
+   ظهور الكروت
+========================= */
+
+const observer =
+    new IntersectionObserver(
+
+        (entries) => {
+
+            entries.forEach(
+                (entry) => {
+
+                    if (
+                        entry.isIntersecting
+                    ) {
+
+                        entry.target
+                            .classList
+                            .add(
+                                "visible"
+                            );
+
+                    }
+
+                }
+            );
+
+        },
+
+        {
+            threshold: .25
+        }
+
+    );
+
+
+document
+    .querySelectorAll(
+        ".card"
+    )
+    .forEach(
+        (card) => {
+
+            observer.observe(
+                card
+            );
+
+        }
+    );
+
+
+/* =========================
+   قلوب تلقائية
+========================= */
+
+setInterval(() => {
+
+    createHearts(1);
+
+}, 1500);
+
+
+</script>
+
+</body>
+
+</html>
