@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>تسنيم ❤️</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html,body{
+  width:100%;
+  min-height:100%;
+}
+
+body{
+  font-family:Tahoma,Arial,sans-serif;
+  background:#080812;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+button{
+  font-family:inherit;
+  border:0;
+  cursor:pointer;
+}
+
+.screen{
+  display:none;
+  min-height:100vh;
+  width:100%;
+  padding:25px 18px;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+.screen.active{
+  display:flex;
+}
+
+.box{
+  width:min(650px,100%);
+  padding:30px 22px;
+}
+
+h1{
+  font-size:clamp(30px,8vw,55px);
+  margin-bottom:18px;
+}
+
+h2{
+  font-size:clamp(24px,6vw,38px);
+  margin-bottom:20px;
+}
+
+p{
+  line-height:2;
+  font-size:17px;
+  margin:10px 0;
+}
+
+.btn{
+  margin-top:25px;
+  padding:14px 30px;
+  border-radius:30px;
+  background:#ff4f81;
+  color:#fff;
+  font-size:17px;
+  box-shadow:0 8px 25px #ff4f8130;
+  transition:.2s;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.btn:active{
+  transform:scale(.97);
+}
+
+/* =========================
+   البداية الجديدة
+========================= */
+
+#home{
+  background:
+    radial-gradient(circle at 50% 35%,#30152b 0,#120b18 35%,#080812 75%);
+}
+
+.heart{
+  font-size:65px;
+  margin-bottom:15px;
+}
+
+.subtitle{
+  opacity:.85;
+}
+
+/* =========================
+   شاشة الكلام
+========================= */
+
+#talk{
+  background:
+    radial-gradient(circle at 50% 40%,#24132b,#080812 70%);
+}
+
+.talk-text{
+  font-size:clamp(20px,5vw,30px);
+  line-height:2;
+  font-weight:bold;
+}
+
+/* =========================
+   شاشة الاعتراف
+========================= */
+
+#love{
+  background:
+    radial-gradient(circle at 50% 45%,#351522,#080812 72%);
+}
+
+.reveal{
+  min-height:70px;
+  font-size:clamp(30px,9vw,60px);
+  font-weight:bold;
+  color:#ff6f98;
+  word-break:break-word;
+}
+
+.long-love{
+  font-size:clamp(18px,5vw,27px);
+  line-height:1.5;
+  margin:20px auto;
+  max-width:700px;
+  overflow-wrap:anywhere;
+}
+
+/* =========================
+   القائمة
+========================= */
+
+#menu{
+  background:
+    radial-gradient(circle at 50% 40%,#201529,#080812 70%);
+}
+
+.menu-box{
+  width:min(560px,100%);
+}
+
+.menu-title{
+  margin-bottom:8px;
+}
+
+.menu-sub{
+  opacity:.7;
+  margin-bottom:25px;
+}
+
+.menu-btn{
+  display:block;
+  width:100%;
+  margin:12px 0;
+  padding:17px;
+  border-radius:18px;
+  background:#171725;
+  border:1px solid #ffffff12;
+  color:#fff;
+  font-size:18px;
+  transition:.2s;
+}
+
+.menu-btn:hover{
+  background:#242437;
+  transform:translateY(-2px);
+}
+
+.menu-btn:active{
+  transform:scale(.98);
+}
+
+.menu-btn.soon{
+  opacity:.55;
+}
+
+/* =========================
+   مصايبي
+========================= */
+
+#mash{
+  background:
+    radial-gradient(circle at 50% 35%,#291426,#080812 72%);
+}
+
+.card{
+  background:#151521;
+  border:1px solid #ffffff10;
+  border-radius:20px;
+  padding:20px;
+  margin:15px 0;
+}
+
+.card h3{
+  margin-bottom:10px;
+  font-size:21px;
+}
+
+.locked{
+  opacity:.5;
+}
+
+/* =========================
+   المشروع القديم
+========================= */
+
+#oldProject{
+  display:none;
+  position:fixed;
+  inset:0;
+  width:100%;
+  height:100%;
+  background:#000;
+  z-index:9999;
+}
+
+#oldProject.active{
+  display:block;
+}
+
+#oldFrame{
+  width:100%;
+  height:100%;
+  border:0;
+  display:block;
+}
+
+/* زر الرجوع للمشروع القديم */
+.old-back{
+  position:fixed;
+  top:12px;
+  right:12px;
+  z-index:10000;
+  padding:9px 14px;
+  border-radius:20px;
+  background:#000b;
+  color:#fff;
+  border:1px solid #fff3;
+  font-size:14px;
+}
+
+/* =========================
+   موبايل
+========================= */
+
+@media(max-width:600px){
+  .box{
+    padding:25px 15px;
+  }
+
+  p{
+    font-size:16px;
+  }
+
+  .btn{
+    width:100%;
+  }
+
+  .menu-btn{
+    font-size:17px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     الشاشة الأولى
+========================= -->
+
+<section id="home" class="screen active">
+  <div class="box">
+
+    <div class="heart">❤️</div>
+
+    <h1>تسنييييييم</h1>
+
+    <p class="subtitle">
+      في كلام مهم لازم يتقال
+    </p>
+
+    <button class="btn" onclick="showScreen('talk')">
+      قول
+    </button>
+
+  </div>
+</section>
+
+
+<!-- =========================
+     الشاشة الثانية
+========================= -->
+
+<section id="talk" class="screen">
+  <div class="box">
+
+    <div class="talk-text">
+
+      بصراحه أنا يومي مكنش بيمشي حلو من غيرك 😭❤️
+
+      <br><br>
+
+      كنت مفتقدك جدًا جدًا جدًا
+
+      <br><br>
+
+      للدرجة إني بقيت كل شوية أفتح الإنستا
+      أشوفك بعتي حاجة ولا لأ 😂
+
+      <br><br>
+
+      وأول ما رجعنا تاني في كلمة عايز أقولهالك...
+
+      <br><br>
+
+      بس امسكي نفسك 😂❤️
+
+    </div>
+
+    <button class="btn" onclick="startLove()">
+      جاهزة؟
+    </button>
+
+  </div>
+</section>
+
+
+<!-- =========================
+     شاشة الاعتراف
+========================= -->
+
+<section id="love" class="screen">
+  <div class="box">
+
+    <div id="reveal" class="reveal"></div>
+
+    <div id="loveText" class="long-love"></div>
+
+    <button
+      id="continueBtn"
+      class="btn"
+      style="display:none"
+      onclick="showScreen('menu')">
+      كملي 😉
+    </button>
+
+  </div>
+</section>
+
+
+<!-- =========================
+     القائمة
+========================= -->
+
+<section id="menu" class="screen">
+  <div class="menu-box">
+
+    <h2 class="menu-title">اختاري يا كوتي ❤️</h2>
+
+    <p class="menu-sub">
+      عندي ليكي 3 حاجات 👀
+    </p>
+
+    <button class="menu-btn" onclick="showScreen('mash')">
+      ❤️ مصايبي
+    </button>
+
+    <button class="menu-btn" onclick="openOldProject()">
+      💕 المشروع القديم
+    </button>
+
+    <button class="menu-btn soon" onclick="soon()">
+      🔒 Soon
+    </button>
+
+  </div>
+</section>
+
+
+<!-- =========================
+     مصايبي
+========================= -->
+
+<section id="mash" class="screen">
+  <div class="box">
+
+    <h2>💥 مصايبي</h2>
+
+    <p>
+      بما إنك رجعتي... كان لازم تعرفي حجم المصيبة
+      اللي عملتيها فيا 😂❤️
+    </p>
+
+    <div class="card">
+      <h3>❤️ المصيبة الأولى</h3>
+
+      <p>
+        إنتِ أول مصيبة في حياتي 😂❤️
+      </p>
+
+      <button class="btn" onclick="showMishap()">
+        افتحيها 👀
+      </button>
+    </div>
+
+    <div class="card locked">
+      <h3>🔒 المصيبة الثانية</h3>
+      <p>لسه بدري عليها 😂</p>
+    </div>
+
+    <div class="card locked">
+      <h3>🔒 المصيبة الثالثة</h3>
+      <p>Coming Soon 👀</p>
+    </div>
+
+    <button class="btn" onclick="showScreen('menu')">
+      ← رجوع
+    </button>
+
+  </div>
+</section>
+
+
+<!-- =========================
+     المصيبة الأولى
+========================= -->
+
+<section id="mishap" class="screen">
+  <div class="box">
+
+    <h2>❤️ إنتِ أول مصيبة في حياتي 😂</h2>
+
+    <p>
+      غيرتي تفكيري عن نفسي وازاي اعرف نفسي أكتر من الاول ❤️
+    </p>
+
+    <p>
+      وحرفيًا أنا عملت حاجات كتير أوي علشانك
+      ولسه عايز أعمل أكتر لأنك تستاهلي وزيادة.
+    </p>
+
+    <p>
+      ولسه عندي خطط ليكي وبذات في المدرسة 😉
+    </p>
+
+    <p>
+      بس حرفيًا نعمة ليا إني عرفتك.
+    </p>
+
+    <p>
+      وأنا ضحيت بحاجات كتير for you babe ❤️
+    </p>
+
+    <p>
+      وعايز أقلك إن كون شخص مهتم بيا كده
+      ده يعتبر حاجة كبيرة أوي أوي أوي أوي أوي أوي أوي أوي أوي أوي أوي ليا.
+    </p>
+
+    <p>
+      وعلشان كده لما عرفتك أكتر عرفت إننا
+      مرينا بنفس الصعوبات والمغامرات.
+    </p>
+
+    <p>
+      والظاهر كده إن ربنا كتبلنا لبعض
+      علشان نتقابل ☺️❤️
+    </p>
+
+    <button class="btn" onclick="showScreen('mash')">
+      ← رجوع
+    </button>
+
+  </div>
+</section>
+
+
+<!-- ==========================================================
+     المشروع القديم
+     الكود القديم موجود كامل داخل textarea
+     عشان يفضل معزول عن المشروع الجديد.
+========================================================== -->
+
+<div id="oldProject">
+
+  <button class="old-back" onclick="closeOldProject()">
+    ← رجوع
+  </button>
+
+  <iframe id="oldFrame"></iframe>
+
+</div>
+
+
+<textarea id="oldSource" style="display:none;"><!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>إلى كوتي ❤️</title>
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+html,body{
+  margin:0;
+  padding:0;
+  width:100%;
+  min-height:100%;
+}
+
+body{
+  font-family:Tahoma,Arial,sans-serif;
+  background:#080812;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+.intro{
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:
+    radial-gradient(circle at center,#35152c 0,#100a18 45%,#050509 100%);
+}
+
+.intro-box{
+  width:min(600px,90%);
+}
+
+.intro h1{
+  font-size:clamp(35px,8vw,65px);
+  margin:10px 0;
+}
+
+.intro p{
+  line-height:2;
+  font-size:18px;
+}
+
+.start-btn{
+  margin-top:25px;
+  padding:14px 30px;
+  border:0;
+  border-radius:30px;
+  background:#ff4f81;
+  color:#fff;
+  font-size:17px;
+  cursor:pointer;
+}
+
+.stars{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  overflow:hidden;
+}
+
+.star{
+  position:absolute;
+  width:2px;
+  height:2px;
+  background:#fff;
+  border-radius:50%;
+  opacity:.7;
+}
+
+.page{
+  width:min(850px,94%);
+  margin:auto;
+  padding:70px 0;
+}
+
+section{
+  margin-bottom:70px;
+}
+
+.card{
+  background:#151521;
+  border:1px solid #ffffff10;
+  border-radius:22px;
+  padding:25px;
+  margin:20px 0;
+  opacity:0;
+  transform:translateY(25px);
+  transition:.7s;
+}
+
+.card.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+h1,h2{
+  margin-top:0;
+}
+
+h1{
+  font-size:clamp(35px,8vw,60px);
+}
+
+h2{
+  font-size:clamp(25px,6vw,40px);
+}
+
+p{
+  line-height:2;
+  font-size:17px;
+}
+
+.highlight{
+  color:#ff7098;
+  font-weight:bold;
+}
+
+.poem{
+  line-height:2.2;
+  font-size:18px;
+  white-space:pre-line;
+}
+
+.reason{
+  cursor:pointer;
+  padding:18px;
+  border-radius:16px;
+  background:#1b1b2a;
+  margin:12px 0;
+}
+
+.reason.locked{
+  opacity:.6;
+}
+
+.reason-content{
+  display:none;
+  margin-top:12px;
+  line-height:2;
+}
+
+.counter{
+  font-size:50px;
+  font-weight:bold;
+  color:#ff7098;
+}
+
+.last{
+  text-align:center;
+}
+
+.last button{
+  padding:14px 25px;
+  border:0;
+  border-radius:30px;
+  background:#ff4f81;
+  color:#fff;
+  cursor:pointer;
+  font-size:17px;
+}
+
+.last-text{
+  display:none;
+  margin-top:25px;
+  line-height:2;
+}
+
+.click-heart{
+  position:fixed;
+  pointer-events:none;
+  font-size:24px;
+  animation:heartUp 1s ease-out forwards;
+}
+
+.float-heart{
+  position:fixed;
+  bottom:-30px;
+  pointer-events:none;
+  animation:floatUp linear forwards;
+}
+
+.final-love{
+  text-align:center;
+  font-size:clamp(35px,9vw,70px);
+  font-weight:bold;
+  color:#ff7098;
+}
+
+@keyframes heartUp{
+  0%{
+    transform:translateY(0) scale(1);
+    opacity:1;
+  }
+  100%{
+    transform:translateY(-100px) scale(1.5);
+    opacity:0;
+  }
+}
+
+@keyframes floatUp{
+  0%{
+    transform:translateY(0);
+    opacity:0;
+  }
+  10%{
+    opacity:.8;
+  }
+  100%{
+    transform:translateY(-110vh);
+    opacity:0;
+  }
+}
+
+@media(max-width:600px){
+  .page{
+    padding:45px 0;
+  }
+
+  .card{
+    padding:20px;
+  }
+
+  p{
+    font-size:16px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="intro" id="intro">
+  <div class="intro-box">
+
+    <h1>❤️</h1>
+
+    <p>
+      في حاجة صغيرة عملتها مخصوص لشخص مميز...
+    </p>
+
+    <h1>تسنيم</h1>
+
+    <p>
+      أو زي ما بحب أناديكي... يا كوتي ❤️
+    </p>
+
+    <button class="start-btn" onclick="startExperience()">
+      ابدئي المفاجأة ✨
+    </button>
+
+  </div>
+</div>
+
+<div class="stars" id="stars"></div>
+
+<main class="page">
+
+<section class="card">
+  <h1>يا كوتي... ❤️</h1>
+
+  <p>
+    يمكن الكلام اللي هنا بسيط،
+    بس كل كلمة فيه معمولة مخصوص علشانك.
+  </p>
+</section>
+
+
+<section class="card">
+  <h2>تسنيم... ❤️</h2>
+
+  <p id="typeText"></p>
+</section>
+
+
+<section class="card">
+  <h2>أول مرة شفتك فيها...</h2>
+
+  <p>
+    ساعات في ناس بنقابلهم بالصدفة،
+    ومش بنعرف إن اللحظة دي هتفرق معانا بعدين.
+  </p>
+
+  <p>
+    يمكن ده اللي حصل معايا.
+  </p>
+</section>
+
+
+<section class="card">
+
+  <h2>ليه إنتِ مميزة؟ 🌷</h2>
+
+  <div class="counter" id="counter">
+    0
+  </div>
+
+  <div class="reason" onclick="unlockReason(this)">
+    🔒 اضغطي علشان تعرفي السبب
+    <div class="reason-content">
+      ❤️ لأن وجودك لوحده بيخلّي اليوم أحلى.
+    </div>
+  </div>
+
+  <div class="reason" onclick="unlockReason(this)">
+    🔒 سبب تاني
+    <div class="reason-content">
+      😂 لأنك تقدري تخليني أبتسم حتى من غير ما تحاولي.
+    </div>
+  </div>
+
+  <div class="reason" onclick="unlockReason(this)">
+    🔒 سبب تالت
+    <div class="reason-content">
+      ✨ لأن فيكي حاجة مش عارف أوصفها بالكلام.
+    </div>
+  </div>
+
+  <div class="reason" onclick="unlockReason(this)">
+    🔒 وآخر سبب
+    <div class="reason-content">
+      🥹 لأنك بقيتي شخص مهم جدًا بالنسبة لي.
+    </div>
+  </div>
+
+</section>
+
+
+<section class="card last">
+
+  <h2>آخر مفاجأة 👀❤️</h2>
+
+  <button onclick="openLastSurprise()">
+    اضغطي هنا
+  </button>
+
+  <p class="last-text" id="lastText">
+    إنتِ مميزة بالنسبالي، عشان معاكي حسيت إن في حد نفسي أفضل أشاركه تفاصيل أيامي، حتى الحاجات الصغيرة اللي مكنتش بفتكر إنها تستاهل تتحكي. ❤️
+  </p>
+
+</section>
+
+
+<section class="card">
+
+  <h2>إلى تسنيم... ❤️</h2>
+
+  <div class="poem">
+ما رأيتُها يومًا، ولم أعرف ملامحها، حتى أتتني صورتُها… فارتبك القلب قبل العين.
+
+توقّفتُ لحظة، وكأن شيئًا في داخلي قد صمت، وقلبي انقبض من شدة الدهشة، فلم أكن مستعدًا أن أرى هذا الجمال.
+
+نظرتُ إليها… فشعرتُ أنني أمام شيءٍ لا يشبه ما رأيت، كأن قطعةً من الجنة قد وصلت إلى الأرض دون أن تستأذن.
+
+لم تكن الصدمةُ أنني رأيتُ فتاةً جميلة، بل أنني اكتشفتُ أن الجمال قد يكون أكبر من أن تصفه الكلمات.
+
+كنتُ أظن أنني أعرف معنى «جميلة»، حتى رأيتها… فعرفتُ أنني كنتُ مخطئًا،
+
+وأن بعض الوجوه لا تُوصف، بل تجعل القلب يقف للحظة وكأنه يقول:
+
+ما هذا الجمال؟ ❤️
+  </div>
+
+</section>
+
+
+<section class="card">
+
+  <h2>وفي النهاية... ❤️</h2>
+
+  <p>
+    يبقى المفاجأة نجحت 😂❤️
+  </p>
+
+  <p>
+    ومهما كتبت هنا، الكلام هيفضل أقل من اللي جوايا.
+  </p>
+
+  <p>
+    كل اللي كنت عايز أقوله:
+  </p>
+
+  <p class="highlight">
+    أنا مبسوط إنك موجودة في حياتي يا تسنيم. ❤️
+  </p>
+
+</section>
+
+
+<section class="card">
+  <div class="final-love">
+    I LOVE YOU T ❤️
+  </div>
+</section>
+
+</main>
+
+
+<script>
+
+let audioCtx;
+
+function sound(){
+  try{
+    audioCtx ||= new (window.AudioContext||window.webkitAudioContext)();
+
+    const osc=audioCtx.createOscillator();
+    const gain=audioCtx.createGain();
+
+    osc.frequency.value=600;
+    gain.gain.value=.035;
+
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+
+    osc.start();
+
+    gain.gain.exponentialRampToValueAtTime(
+      .001,
+      audioCtx.currentTime+.08
+    );
+
+    osc.stop(audioCtx.currentTime+.08);
+  }catch(e){}
+}
+
+
+function startExperience(){
+
+  document.getElementById("intro").style.display="none";
+
+  sound();
+
+  typeWriter();
+
+  document.querySelectorAll(".card")
+    .forEach((card,i)=>{
+      setTimeout(()=>{
+        card.classList.add("show");
+      },i*120);
+    });
+}
+
+
+function typeWriter(){
+
+  const text=
+  "يمكن مكنتش متوقع إن شخص يدخل حياتي بالصدفة، وبعدها يبقى وجوده من أجمل الحاجات فيها. لكن إنتِ عملتي كده يا تسنيم. بقيت أفرح لما أشوف رسالتك، وأبتسم من حاجات بسيطة بسببك، وألاقي نفسي بفكر فيكي من غير ما أخطط. يمكن مش بعرف دايمًا أقول كل اللي جوايا، لكن الحقيقة إن مكانتك عندي أكبر بكتير من الكلام. ❤️";
+
+  const el=document.getElementById("typeText");
+
+  let i=0;
+
+  const timer=setInterval(()=>{
+
+    el.textContent=text.slice(0,++i);
+
+    if(i>=text.length){
+      clearInterval(timer);
+    }
+
+  },18);
+}
+
+
+function unlockReason(element){
+
+  sound();
+
+  const content=
+    element.querySelector(".reason-content");
+
+  if(content.style.display==="block"){
+    return;
+  }
+
+  content.style.display="block";
+
+  element.childNodes[0].textContent="❤️ ";
+
+  const counter=
+    document.getElementById("counter");
+
+  counter.textContent=
+    Number(counter.textContent)+1;
+
+  heartExplosion(element);
+}
+
+
+function openLastSurprise(){
+
+  sound();
+
+  document.getElementById("lastText")
+    .style.display="block";
+
+  createHearts(12);
+}
+
+
+function heartExplosion(element){
+
+  const rect=
+    element.getBoundingClientRect();
+
+  for(let i=0;i<5;i++){
+
+    const heart=
+      document.createElement("div");
+
+    heart.className="click-heart";
+    heart.textContent="❤️";
+
+    heart.style.left=
+      (rect.left+rect.width/2+Math.random()*60-30)+"px";
+
+    heart.style.top=
+      (rect.top+rect.height/2)+"px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+      heart.remove();
+    },1000);
+  }
+}
+
+
+function createHearts(number){
+
+  for(let i=0;i<number;i++){
+
+    const heart=
+      document.createElement("div");
+
+    heart.className="float-heart";
+    heart.textContent=
+      Math.random()>.5 ? "❤️" : "💕";
+
+    heart.style.left=
+      Math.random()*100+"vw";
+
+    heart.style.fontSize=
+      (14+Math.random()*14)+"px";
+
+    heart.style.animationDuration=
+      (4+Math.random()*3)+"s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+      heart.remove();
+    },7000);
+  }
+}
+
+
+const observer=
+  new IntersectionObserver(entries=>{
+
+    entries.forEach(entry=>{
+
+      if(entry.isIntersecting){
+        entry.target.classList.add("show");
+      }
+
+    });
+
+  },{threshold:.15});
+
+
+document.querySelectorAll(".card")
+  .forEach(card=>observer.observe(card));
+
+
+setInterval(()=>{
+  createHearts(1);
+},1800);
+
+</script>
+
+</body>
+</html>
+</textarea>
+
+
+<script>
+/* ==========================================================
+   التحكم في المشروع الجديد
+========================================================== */
+
+function showScreen(id){
+
+  document.querySelectorAll(".screen")
+    .forEach(screen=>{
+      screen.classList.remove("active");
+    });
+
+  const target=document.getElementById(id);
+
+  if(target){
+    target.classList.add("active");
+  }
+
+  window.scrollTo(0,0);
+}
+
+
+/* =========================
+   شاشة الاعتراف
+========================= */
+
+function startLove(){
+
+  showScreen("love");
+
+  const reveal=
+    document.getElementById("reveal");
+
+  const loveText=
+    document.getElementById("loveText");
+
+  const button=
+    document.getElementById("continueBtn");
+
+  reveal.textContent="";
+  loveText.textContent="";
+  button.style.display="none";
+
+  let text="أنا";
+  let i=0;
+
+  const first=setInterval(()=>{
+
+    reveal.textContent=text.slice(0,++i);
+
+    if(i>=text.length){
+
+      clearInterval(first);
+
+      setTimeout(()=>{
+        dots();
+      },500);
+    }
+
+  },300);
+
+
+  function dots(){
+
+    let dotsText="";
+    let count=0;
+
+    const timer=setInterval(()=>{
+
+      dotsText+=".";
+      reveal.textContent="أنا"+dotsText;
+
+      count++;
+
+      if(count>=3){
+
+        clearInterval(timer);
+
+        setTimeout(()=>{
+          longLove();
+        },500);
+
+      }
+
+    },450);
+  }
+
+
+  function longLove(){
+
+    reveal.textContent="";
+
+    const line1="بحب"+"ا".repeat(24);
+    const line2="ا".repeat(25);
+    const line3="ا".repeat(25);
+    const line4="ا".repeat(25)+"ك";
+
+    reveal.innerHTML=
+      line1+"<br>"+
+      line2+"<br>"+
+      line3+"<br>"+
+      line4;
+
+    setTimeout(()=>{
+
+      loveText.innerHTML=
+        "واتعلقت بيكي جدًا ❤️<br>"+
+        "وحرفيًا إنتِ وكل دماغي يا روحي ❤️<br>"+
+        "وبقيت مغرم في حبك ❤️";
+
+      button.style.display="inline-block";
+
+    },1000);
+  }
+}
+
+
+/* =========================
+   مصايبي
+========================= */
+
+function showMishap(){
+  showScreen("mishap");
+}
+
+
+/* =========================
+   Soon
+========================= */
+
+function soon(){
+
+  alert(
+    "لسه بدري عليها 😂❤️\n\nاستني المفاجآت الجاية 😉"
+  );
+
+}
+
+
+/* ==========================================================
+   فتح المشروع القديم
+========================================================== */
+
+function openOldProject(){
+
+  const old=
+    document.getElementById("oldProject");
+
+  const frame=
+    document.getElementById("oldFrame");
+
+  const source=
+    document.getElementById("oldSource").value;
+
+  /*
+    تحميل المشروع القديم داخل iframe
+    يخلي CSS وJS بتوعه منفصلين تمامًا
+    عن المشروع الجديد.
+  */
+
+  frame.srcdoc=source;
+
+  old.classList.add("active");
+
+  document.body.style.overflow="hidden";
+}
+
+
+/* ==========================================================
+   الرجوع من المشروع القديم
+========================================================== */
+
+function closeOldProject(){
+
+  const old=
+    document.getElementById("oldProject");
+
+  const frame=
+    document.getElementById("oldFrame");
+
+  old.classList.remove("active");
+
+  /*
+    تفريغ الـ iframe بعد الخروج
+    لتقليل استهلاك الذاكرة.
+  */
+
+  frame.srcdoc="";
+
+  document.body.style.overflow="hidden";
+
+  showScreen("menu");
+}
+
+</script>
+
+</body>
+</html>
