@@ -1,2189 +1,1304 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>إلى كوتي ❤️</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>تسنيم ❤️</title>
 
 <style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html,body{
+  width:100%;
+  min-height:100%;
+}
+
+body{
+  font-family:Tahoma,Arial,sans-serif;
+  background:#080812;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+button{
+  font-family:inherit;
+  border:0;
+  cursor:pointer;
+}
+
+.screen{
+  display:none;
+  min-height:100vh;
+  width:100%;
+  padding:25px 18px;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+.screen.active{
+  display:flex;
+}
+
+.box{
+  width:min(650px,100%);
+  padding:30px 22px;
+}
+
+h1{
+  font-size:clamp(30px,8vw,55px);
+  margin-bottom:18px;
+}
+
+h2{
+  font-size:clamp(24px,6vw,38px);
+  margin-bottom:20px;
+}
+
+p{
+  line-height:2;
+  font-size:17px;
+  margin:10px 0;
+}
+
+.btn{
+  margin-top:25px;
+  padding:14px 30px;
+  border-radius:30px;
+  background:#ff4f81;
+  color:#fff;
+  font-size:17px;
+  box-shadow:0 8px 25px #ff4f8130;
+  transition:.2s;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.btn:active{
+  transform:scale(.97);
+}
 
 /* =========================
-   الأساسيات
+   البداية الجديدة
 ========================= */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+#home{
+  background:
+    radial-gradient(circle at 50% 35%,#30152b 0,#120b18 35%,#080812 75%);
 }
 
-html {
-    scroll-behavior: smooth;
+.heart{
+  font-size:65px;
+  margin-bottom:15px;
 }
 
-body {
-    min-height: 100vh;
-
-    background:
-        radial-gradient(
-            circle at top,
-            #25002d,
-            #08000c 60%,
-            #020003
-        );
-
-    color: white;
-
-    font-family:
-        Arial,
-        Tahoma,
-        sans-serif;
-
-    overflow-x: hidden;
+.subtitle{
+  opacity:.85;
 }
-
 
 /* =========================
-   شاشة البداية
+   شاشة الكلام
 ========================= */
 
-.intro {
-    position: fixed;
-    inset: 0;
-    z-index: 9999;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
-
-    background:
-        radial-gradient(
-            circle at center,
-            #4a0b4d,
-            #17001c 45%,
-            #030005
-        );
-
-    transition:
-        opacity 1s ease,
-        visibility 1s ease;
+#talk{
+  background:
+    radial-gradient(circle at 50% 40%,#24132b,#080812 70%);
 }
 
-.intro.hide {
-    opacity: 0;
-    visibility: hidden;
+.talk-text{
+  font-size:clamp(20px,5vw,30px);
+  line-height:2;
+  font-weight:bold;
 }
-
-.intro-content {
-    width: 90%;
-    max-width: 650px;
-
-    animation:
-        introAppear 2s ease;
-}
-
-.intro-small {
-    color: #ddb7d6;
-    font-size: 18px;
-
-    margin-bottom: 15px;
-}
-
-.intro-name {
-    font-size:
-        clamp(48px, 13vw, 95px);
-
-    font-weight: bold;
-
-    background:
-        linear-gradient(
-            90deg,
-            #ff8bc8,
-            #ffffff,
-            #d88cff,
-            #ff8bc8
-        );
-
-    background-size: 300%;
-
-    -webkit-background-clip: text;
-    background-clip: text;
-
-    color: transparent;
-
-    animation:
-        gradientText 5s infinite linear;
-}
-
-.intro-subtitle {
-    margin-top: 15px;
-
-    color: #ffc8e5;
-
-    font-size: 22px;
-}
-
-.main-button {
-    margin-top: 35px;
-
-    padding:
-        16px 35px;
-
-    border:
-        1px solid
-        rgba(255,255,255,.25);
-
-    border-radius: 50px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #ff4d9d,
-            #9b35ff
-        );
-
-    color: white;
-
-    font-size: 17px;
-    font-weight: bold;
-
-    cursor: pointer;
-
-    box-shadow:
-        0 0 30px
-        rgba(255,70,170,.35);
-
-    transition: .3s;
-}
-
-.main-button:hover {
-    transform: scale(1.08);
-
-    box-shadow:
-        0 0 45px
-        rgba(255,70,170,.65);
-}
-
 
 /* =========================
-   النجوم
+   شاشة الاعتراف
 ========================= */
 
-.stars {
-    position: fixed;
-    inset: 0;
-
-    pointer-events: none;
-
-    z-index: 0;
-
-    background-image:
-        radial-gradient(
-            white 1px,
-            transparent 1px
-        );
-
-    background-size: 90px 90px;
-
-    opacity: .35;
-
-    animation:
-        starsMove 20s linear infinite;
+#love{
+  background:
+    radial-gradient(circle at 50% 45%,#351522,#080812 72%);
 }
 
+.reveal{
+  min-height:70px;
+  font-size:clamp(30px,9vw,60px);
+  font-weight:bold;
+  color:#ff6f98;
+  word-break:break-word;
+}
+
+.long-love{
+  font-size:clamp(18px,5vw,27px);
+  line-height:1.5;
+  margin:20px auto;
+  max-width:700px;
+  overflow-wrap:anywhere;
+}
 
 /* =========================
-   الصفحة
+   القائمة
 ========================= */
 
-.page {
-    position: relative;
-
-    z-index: 2;
-
-    opacity: 0;
-
-    transition:
-        opacity 2s ease;
+#menu{
+  background:
+    radial-gradient(circle at 50% 40%,#201529,#080812 70%);
 }
 
-.page.show {
-    opacity: 1;
+.menu-box{
+  width:min(560px,100%);
 }
 
-.container {
-    width: 92%;
-    max-width: 760px;
-
-    margin: auto;
-
-    padding: 80px 0;
+.menu-title{
+  margin-bottom:8px;
 }
 
+.menu-sub{
+  opacity:.7;
+  margin-bottom:25px;
+}
+
+.menu-btn{
+  display:block;
+  width:100%;
+  margin:12px 0;
+  padding:17px;
+  border-radius:18px;
+  background:#171725;
+  border:1px solid #ffffff12;
+  color:#fff;
+  font-size:18px;
+  transition:.2s;
+}
+
+.menu-btn:hover{
+  background:#242437;
+  transform:translateY(-2px);
+}
+
+.menu-btn:active{
+  transform:scale(.98);
+}
+
+.menu-btn.soon{
+  opacity:.55;
+}
 
 /* =========================
-   الأقسام والكروت
+   مصايبي
 ========================= */
 
-.section {
-    min-height: 80vh;
-
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
-
-    padding: 30px 0;
+#mash{
+  background:
+    radial-gradient(circle at 50% 35%,#291426,#080812 72%);
 }
 
-.card {
-    width: 100%;
-
-    padding:
-        42px 25px;
-
-    border-radius: 30px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.09),
-            rgba(255,255,255,.035)
-        );
-
-    border:
-        1px solid
-        rgba(255,255,255,.15);
-
-    backdrop-filter:
-        blur(15px);
-
-    box-shadow:
-        0 20px 70px
-        rgba(0,0,0,.45);
-
-    transform:
-        translateY(40px);
-
-    opacity: 0;
-
-    transition:
-        opacity 1.2s ease,
-        transform 1.2s ease;
+.card{
+  background:#151521;
+  border:1px solid #ffffff10;
+  border-radius:20px;
+  padding:20px;
+  margin:15px 0;
 }
 
-.card.visible {
-    opacity: 1;
-
-    transform:
-        translateY(0);
+.card h3{
+  margin-bottom:10px;
+  font-size:21px;
 }
 
+.locked{
+  opacity:.5;
+}
 
 /* =========================
-   النصوص
+   المشروع القديم
 ========================= */
 
-h1 {
-    font-size:
-        clamp(38px, 9vw, 58px);
-
-    margin-bottom: 20px;
+#oldProject{
+  display:none;
+  position:fixed;
+  inset:0;
+  width:100%;
+  height:100%;
+  background:#000;
+  z-index:9999;
 }
 
-h2 {
-    font-size:
-        clamp(28px, 7vw, 42px);
-
-    color: #ffb7dc;
-
-    margin-bottom: 25px;
+#oldProject.active{
+  display:block;
 }
 
-p {
-    color: #f7eaf2;
-
-    font-size: 19px;
-
-    line-height: 2.1;
+#oldFrame{
+  width:100%;
+  height:100%;
+  border:0;
+  display:block;
 }
 
-.highlight {
-    color: #ffb7dc;
-
-    font-weight: bold;
+/* زر الرجوع للمشروع القديم */
+.old-back{
+  position:fixed;
+  top:12px;
+  right:12px;
+  z-index:10000;
+  padding:9px 14px;
+  border-radius:20px;
+  background:#000b;
+  color:#fff;
+  border:1px solid #fff3;
+  font-size:14px;
 }
-
-.emoji-heart {
-    font-size: 75px;
-
-    animation:
-        heartbeat 1.5s infinite;
-
-    margin-bottom: 20px;
-}
-
-.typing {
-    min-height: 200px;
-}
-
 
 /* =========================
-   الشعر
+   موبايل
 ========================= */
 
-.poem {
-    font-size: 19px;
+@media(max-width:600px){
+  .box{
+    padding:25px 15px;
+  }
 
-    line-height: 2.3;
+  p{
+    font-size:16px;
+  }
 
-    color: #f9eaf2;
+  .btn{
+    width:100%;
+  }
+
+  .menu-btn{
+    font-size:17px;
+  }
 }
-
-.poem strong {
-    color: #ffd1e7;
-}
-
-
-/* =========================
-   العداد
-========================= */
-
-.counter {
-    display: inline-block;
-
-    margin:
-        5px 0 12px;
-
-    padding:
-        8px 22px;
-
-    border-radius: 50px;
-
-    background:
-        rgba(255,120,190,.12);
-
-    border:
-        1px solid
-        rgba(255,150,210,.2);
-
-    color: #ffb7dc;
-
-    font-size: 18px;
-
-    font-weight: bold;
-
-    transition: .4s;
-}
-
-.counter.pop {
-    animation:
-        counterPop .5s ease;
-}
-
-.counter-message {
-    font-size: 15px;
-
-    color: #cda7c7;
-
-    margin-bottom: 20px;
-}
-
-
-/* =========================
-   الأسباب الأربعة
-========================= */
-
-.reasons {
-    display: grid;
-
-    gap: 15px;
-
-    margin-top: 25px;
-}
-
-.reason {
-    min-height: 75px;
-
-    padding: 20px;
-
-    border-radius: 20px;
-
-    background:
-        rgba(255,255,255,.06);
-
-    border:
-        1px solid
-        rgba(255,255,255,.09);
-
-    cursor: pointer;
-
-    user-select: none;
-
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    gap: 12px;
-
-    transition:
-        transform .3s ease,
-        background .3s ease,
-        box-shadow .3s ease;
-}
-
-.reason:hover {
-    transform:
-        translateY(-5px);
-
-    background:
-        rgba(255,255,255,.11);
-
-    box-shadow:
-        0 10px 30px
-        rgba(255,80,170,.15);
-}
-
-.reason:active {
-    transform:
-        scale(.96);
-}
-
-.reason.locked .lock {
-    font-size: 32px;
-
-    transition: .4s;
-}
-
-.reason-text {
-    display: none;
-
-    font-size: 17px;
-
-    line-height: 1.8;
-}
-
-.reason.unlocked {
-    background:
-        rgba(255,80,170,.14);
-
-    box-shadow:
-        0 0 30px
-        rgba(255,80,170,.2);
-}
-
-.reason.unlocked .lock {
-    animation:
-        unlockAnimation .5s ease;
-}
-
-.reason.unlocked .reason-text {
-    display: block;
-
-    animation:
-        reasonAppear .7s ease;
-}
-
-
-/* =========================
-   آخر حاجة يا كوتي
-========================= */
-
-.last-surprise {
-    display: none;
-
-    margin-top: 25px;
-}
-
-.last-surprise.show {
-    display: block;
-
-    animation:
-        finalAppear 1.2s ease;
-}
-
-.last-box {
-    min-height: 85px;
-
-    padding: 22px;
-
-    border-radius: 22px;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(255,80,170,.12),
-            rgba(150,60,255,.10)
-        );
-
-    border:
-        1px solid
-        rgba(255,150,220,.2);
-
-    cursor: pointer;
-
-    transition: .3s;
-}
-
-.last-box:hover {
-    transform:
-        translateY(-5px);
-
-    box-shadow:
-        0 0 35px
-        rgba(255,80,180,.2);
-}
-
-.last-box.opened {
-    cursor: default;
-}
-
-.last-lock {
-    font-size: 34px;
-}
-
-.last-title {
-    font-size: 20px;
-
-    color: #ffb7dc;
-
-    font-weight: bold;
-
-    margin-top: 5px;
-}
-
-.last-content {
-    display: none;
-
-    margin-top: 20px;
-
-    animation:
-        reasonAppear .9s ease;
-}
-
-.last-box.opened .last-content {
-    display: block;
-}
-
-.last-box.opened .last-lock {
-    animation:
-        unlockAnimation .5s ease;
-}
-
-
-/* =========================
-   القلوب عند الضغط
-========================= */
-
-.click-heart {
-    position: fixed;
-
-    pointer-events: none;
-
-    z-index: 99999;
-
-    font-size: 25px;
-
-    animation:
-        heartExplosion
-        1.2s ease-out
-        forwards;
-}
-
-
-/* =========================
-   القلوب الطائرة
-========================= */
-
-.floating-heart {
-    position: fixed;
-
-    bottom: -50px;
-
-    z-index: 1;
-
-    pointer-events: none;
-
-    animation:
-        floatHeart
-        linear
-        forwards;
-}
-
-
-/* =========================
-   آخر لقطة
-========================= */
-
-.final-love {
-    min-height: 75vh;
-}
-
-.final-love-text {
-    font-size:
-        clamp(40px, 10vw, 80px);
-
-    font-weight: bold;
-
-    direction: ltr;
-
-    background:
-        linear-gradient(
-            90deg,
-            #ff75b9,
-            #ffffff,
-            #d98cff,
-            #ff75b9
-        );
-
-    background-size: 300%;
-
-    -webkit-background-clip: text;
-    background-clip: text;
-
-    color: transparent;
-
-    animation:
-        finalLoveAppear 2s ease,
-        gradientText 5s infinite linear;
-
-    text-shadow:
-        0 0 35px
-        rgba(255,100,190,.35);
-}
-
-
-/* =========================
-   الحركات
-========================= */
-
-@keyframes introAppear {
-
-    from {
-        opacity: 0;
-
-        transform:
-            scale(.8);
-    }
-
-    to {
-        opacity: 1;
-
-        transform:
-            scale(1);
-    }
-
-}
-
-@keyframes gradientText {
-
-    0% {
-        background-position: 0%;
-    }
-
-    100% {
-        background-position: 300%;
-    }
-
-}
-
-@keyframes heartbeat {
-
-    0%,100% {
-        transform:
-            scale(1);
-    }
-
-    50% {
-        transform:
-            scale(1.15);
-    }
-
-}
-
-@keyframes starsMove {
-
-    from {
-        transform:
-            translateY(0);
-    }
-
-    to {
-        transform:
-            translateY(90px);
-    }
-
-}
-
-@keyframes heartExplosion {
-
-    0% {
-        opacity: 1;
-
-        transform:
-            translate(0,0)
-            scale(.5);
-    }
-
-    100% {
-        opacity: 0;
-
-        transform:
-            translate(
-                var(--x),
-                var(--y)
-            )
-            scale(1.4)
-            rotate(25deg);
-    }
-
-}
-
-@keyframes unlockAnimation {
-
-    0% {
-        transform:
-            scale(1);
-    }
-
-    50% {
-        transform:
-            scale(1.4)
-            rotate(-10deg);
-    }
-
-    100% {
-        transform:
-            scale(1)
-            rotate(0);
-    }
-
-}
-
-@keyframes reasonAppear {
-
-    from {
-        opacity: 0;
-
-        transform:
-            translateY(10px);
-    }
-
-    to {
-        opacity: 1;
-
-        transform:
-            translateY(0);
-    }
-
-}
-
-@keyframes counterPop {
-
-    0% {
-        transform:
-            scale(1);
-    }
-
-    50% {
-        transform:
-            scale(1.25);
-    }
-
-    100% {
-        transform:
-            scale(1);
-    }
-
-}
-
-@keyframes finalAppear {
-
-    from {
-        opacity: 0;
-
-        transform:
-            scale(.7)
-            translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-
-        transform:
-            scale(1)
-            translateY(0);
-    }
-
-}
-
-@keyframes finalLoveAppear {
-
-    from {
-        opacity: 0;
-
-        transform:
-            scale(.5);
-    }
-
-    to {
-        opacity: 1;
-
-        transform:
-            scale(1);
-    }
-
-}
-
-@keyframes floatHeart {
-
-    0% {
-        transform:
-            translateY(0)
-            rotate(0deg);
-
-        opacity: 1;
-    }
-
-    100% {
-        transform:
-            translateY(-115vh)
-            rotate(360deg);
-
-        opacity: 0;
-    }
-
-}
-
-
-/* =========================
-   الموبايل
-========================= */
-
-@media(max-width:600px) {
-
-    .container {
-        padding:
-            50px 0;
-    }
-
-    .card {
-        padding:
-            32px 20px;
-    }
-
-    p {
-        font-size: 17px;
-    }
-
-    .poem {
-        font-size: 17px;
-    }
-
-    .section {
-        min-height: 75vh;
-    }
-
-}
-
 </style>
-
 </head>
-
 
 <body>
 
-
 <!-- =========================
-     شاشة البداية
+     الشاشة الأولى
 ========================= -->
 
-<div
-    class="intro"
-    id="intro">
+<section id="home" class="screen active">
+  <div class="box">
 
-    <div class="intro-content">
+    <div class="heart">❤️</div>
 
-        <div class="intro-small">
+    <h1>تسنييييييم</h1>
 
-            في حاجة صغيرة عملتها
-            مخصوص لشخص مميز...
+    <p class="subtitle">
+      في كلام مهم لازم يتقال
+    </p>
 
-        </div>
+    <button class="btn" onclick="showScreen('talk')">
+      قول
+    </button>
 
-
-        <div class="intro-name">
-
-            تسنيم
-
-        </div>
+  </div>
+</section>
 
 
-        <div class="intro-subtitle">
+<!-- =========================
+     الشاشة الثانية
+========================= -->
 
-            أو زي ما بحب أناديكي...
-            يا كوتي ❤️
+<section id="talk" class="screen">
+  <div class="box">
 
-        </div>
+    <div class="talk-text">
 
+      بصراحه أنا يومي مكنش بيمشي حلو من غيرك 😭❤️
 
-        <button
-            class="main-button"
-            onclick="startExperience()">
+      <br><br>
 
-            ابدئي المفاجأة ✨
+      كنت مفتقدك جدًا جدًا جدًا
 
-        </button>
+      <br><br>
+
+      للدرجة إني بقيت كل شوية أفتح الإنستا
+      أشوفك بعتي حاجة ولا لأ 😂
+
+      <br><br>
+
+      وأول ما رجعنا تاني في كلمة عايز أقولهالك...
+
+      <br><br>
+
+      بس امسكي نفسك 😂❤️
 
     </div>
 
-</div>
+    <button class="btn" onclick="startLove()">
+      جاهزة؟
+    </button>
 
-
-<div class="stars"></div>
+  </div>
+</section>
 
 
 <!-- =========================
-     الموقع
+     شاشة الاعتراف
 ========================= -->
 
-<main
-    class="page"
-    id="page">
+<section id="love" class="screen">
+  <div class="box">
 
-<div class="container">
+    <div id="reveal" class="reveal"></div>
+
+    <div id="loveText" class="long-love"></div>
+
+    <button
+      id="continueBtn"
+      class="btn"
+      style="display:none"
+      onclick="showScreen('menu')">
+      كملي 😉
+    </button>
+
+  </div>
+</section>
 
 
-<!-- البداية -->
+<!-- =========================
+     القائمة
+========================= -->
 
-<section class="section">
+<section id="menu" class="screen">
+  <div class="menu-box">
 
-<div class="card">
+    <h2 class="menu-title">اختاري يا كوتي ❤️</h2>
 
-<div class="emoji-heart">
-❤️
+    <p class="menu-sub">
+      عندي ليكي 3 حاجات 👀
+    </p>
+
+    <button class="menu-btn" onclick="showScreen('mash')">
+      ❤️ مصايبي
+    </button>
+
+    <button class="menu-btn" onclick="openOldProject()">
+      💕 المشروع القديم
+    </button>
+
+    <button class="menu-btn soon" onclick="soon()">
+      🔒 Soon
+    </button>
+
+  </div>
+</section>
+
+
+<!-- =========================
+     مصايبي
+========================= -->
+
+<section id="mash" class="screen">
+  <div class="box">
+
+    <h2>💥 مصايبي</h2>
+
+    <p>
+      بما إنك رجعتي... كان لازم تعرفي حجم المصيبة
+      اللي عملتيها فيا 😂❤️
+    </p>
+
+    <div class="card">
+      <h3>❤️ المصيبة الأولى</h3>
+
+      <p>
+        إنتِ أول مصيبة في حياتي 😂❤️
+      </p>
+
+      <button class="btn" onclick="showMishap()">
+        افتحيها 👀
+      </button>
+    </div>
+
+    <div class="card locked">
+      <h3>🔒 المصيبة الثانية</h3>
+      <p>لسه بدري عليها 😂</p>
+    </div>
+
+    <div class="card locked">
+      <h3>🔒 المصيبة الثالثة</h3>
+      <p>Coming Soon 👀</p>
+    </div>
+
+    <button class="btn" onclick="showScreen('menu')">
+      ← رجوع
+    </button>
+
+  </div>
+</section>
+
+
+<!-- =========================
+     المصيبة الأولى
+========================= -->
+
+<section id="mishap" class="screen">
+  <div class="box">
+
+    <h2>❤️ إنتِ أول مصيبة في حياتي 😂</h2>
+
+    <p>
+      غيرتي تفكيري عن نفسي وازاي اعرف نفسي أكتر من الاول ❤️
+    </p>
+
+    <p>
+      وحرفيًا أنا عملت حاجات كتير أوي علشانك
+      ولسه عايز أعمل أكتر لأنك تستاهلي وزيادة.
+    </p>
+
+    <p>
+      ولسه عندي خطط ليكي وبذات في المدرسة 😉
+    </p>
+
+    <p>
+      بس حرفيًا نعمة ليا إني عرفتك.
+    </p>
+
+    <p>
+      وأنا ضحيت بحاجات كتير for you babe ❤️
+    </p>
+
+    <p>
+      وعايز أقلك إن كون شخص مهتم بيا كده
+      ده يعتبر حاجة كبيرة أوي أوي أوي أوي أوي أوي أوي أوي أوي أوي أوي ليا.
+    </p>
+
+    <p>
+      وعلشان كده لما عرفتك أكتر عرفت إننا
+      مرينا بنفس الصعوبات والمغامرات.
+    </p>
+
+    <p>
+      والظاهر كده إن ربنا كتبلنا لبعض
+      علشان نتقابل ☺️❤️
+    </p>
+
+    <button class="btn" onclick="showScreen('mash')">
+      ← رجوع
+    </button>
+
+  </div>
+</section>
+
+
+<!-- ==========================================================
+     المشروع القديم
+     الكود القديم موجود كامل داخل textarea
+     عشان يفضل معزول عن المشروع الجديد.
+========================================================== -->
+
+<div id="oldProject">
+
+  <button class="old-back" onclick="closeOldProject()">
+    ← رجوع
+  </button>
+
+  <iframe id="oldFrame"></iframe>
+
 </div>
 
-<h1>
-يا كوتي...
-</h1>
 
-<p>
+<textarea id="oldSource" style="display:none;"><!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>إلى كوتي ❤️</title>
 
-قبل ما تقري أي حاجة،
-عايزك تعرفي إن الصفحة دي
-مش مجرد موقع.
+<style>
+*{
+  box-sizing:border-box;
+}
 
-<br><br>
+html,body{
+  margin:0;
+  padding:0;
+  width:100%;
+  min-height:100%;
+}
 
-دي شوية كلام
-كان نفسي أقولهولك
-بطريقة مختلفة. 🥹❤️
+body{
+  font-family:Tahoma,Arial,sans-serif;
+  background:#080812;
+  color:#fff;
+  overflow-x:hidden;
+}
 
-</p>
+.intro{
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:
+    radial-gradient(circle at center,#35152c 0,#100a18 45%,#050509 100%);
+}
 
+.intro-box{
+  width:min(600px,90%);
+}
+
+.intro h1{
+  font-size:clamp(35px,8vw,65px);
+  margin:10px 0;
+}
+
+.intro p{
+  line-height:2;
+  font-size:18px;
+}
+
+.start-btn{
+  margin-top:25px;
+  padding:14px 30px;
+  border:0;
+  border-radius:30px;
+  background:#ff4f81;
+  color:#fff;
+  font-size:17px;
+  cursor:pointer;
+}
+
+.stars{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  overflow:hidden;
+}
+
+.star{
+  position:absolute;
+  width:2px;
+  height:2px;
+  background:#fff;
+  border-radius:50%;
+  opacity:.7;
+}
+
+.page{
+  width:min(850px,94%);
+  margin:auto;
+  padding:70px 0;
+}
+
+section{
+  margin-bottom:70px;
+}
+
+.card{
+  background:#151521;
+  border:1px solid #ffffff10;
+  border-radius:22px;
+  padding:25px;
+  margin:20px 0;
+  opacity:0;
+  transform:translateY(25px);
+  transition:.7s;
+}
+
+.card.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+h1,h2{
+  margin-top:0;
+}
+
+h1{
+  font-size:clamp(35px,8vw,60px);
+}
+
+h2{
+  font-size:clamp(25px,6vw,40px);
+}
+
+p{
+  line-height:2;
+  font-size:17px;
+}
+
+.highlight{
+  color:#ff7098;
+  font-weight:bold;
+}
+
+.poem{
+  line-height:2.2;
+  font-size:18px;
+  white-space:pre-line;
+}
+
+.reason{
+  cursor:pointer;
+  padding:18px;
+  border-radius:16px;
+  background:#1b1b2a;
+  margin:12px 0;
+}
+
+.reason.locked{
+  opacity:.6;
+}
+
+.reason-content{
+  display:none;
+  margin-top:12px;
+  line-height:2;
+}
+
+.counter{
+  font-size:50px;
+  font-weight:bold;
+  color:#ff7098;
+}
+
+.last{
+  text-align:center;
+}
+
+.last button{
+  padding:14px 25px;
+  border:0;
+  border-radius:30px;
+  background:#ff4f81;
+  color:#fff;
+  cursor:pointer;
+  font-size:17px;
+}
+
+.last-text{
+  display:none;
+  margin-top:25px;
+  line-height:2;
+}
+
+.click-heart{
+  position:fixed;
+  pointer-events:none;
+  font-size:24px;
+  animation:heartUp 1s ease-out forwards;
+}
+
+.float-heart{
+  position:fixed;
+  bottom:-30px;
+  pointer-events:none;
+  animation:floatUp linear forwards;
+}
+
+.final-love{
+  text-align:center;
+  font-size:clamp(35px,9vw,70px);
+  font-weight:bold;
+  color:#ff7098;
+}
+
+@keyframes heartUp{
+  0%{
+    transform:translateY(0) scale(1);
+    opacity:1;
+  }
+  100%{
+    transform:translateY(-100px) scale(1.5);
+    opacity:0;
+  }
+}
+
+@keyframes floatUp{
+  0%{
+    transform:translateY(0);
+    opacity:0;
+  }
+  10%{
+    opacity:.8;
+  }
+  100%{
+    transform:translateY(-110vh);
+    opacity:0;
+  }
+}
+
+@media(max-width:600px){
+  .page{
+    padding:45px 0;
+  }
+
+  .card{
+    padding:20px;
+  }
+
+  p{
+    font-size:16px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="intro" id="intro">
+  <div class="intro-box">
+
+    <h1>❤️</h1>
+
+    <p>
+      في حاجة صغيرة عملتها مخصوص لشخص مميز...
+    </p>
+
+    <h1>تسنيم</h1>
+
+    <p>
+      أو زي ما بحب أناديكي... يا كوتي ❤️
+    </p>
+
+    <button class="start-btn" onclick="startExperience()">
+      ابدئي المفاجأة ✨
+    </button>
+
+  </div>
 </div>
+
+<div class="stars" id="stars"></div>
+
+<main class="page">
+
+<section class="card">
+  <h1>يا كوتي... ❤️</h1>
+
+  <p>
+    يمكن الكلام اللي هنا بسيط،
+    بس كل كلمة فيه معمولة مخصوص علشانك.
+  </p>
+</section>
+
+
+<section class="card">
+  <h2>تسنيم... ❤️</h2>
+
+  <p id="typeText"></p>
+</section>
+
+
+<section class="card">
+  <h2>أول مرة شفتك فيها...</h2>
+
+  <p>
+    ساعات في ناس بنقابلهم بالصدفة،
+    ومش بنعرف إن اللحظة دي هتفرق معانا بعدين.
+  </p>
+
+  <p>
+    يمكن ده اللي حصل معايا.
+  </p>
+</section>
+
+
+<section class="card">
+
+  <h2>ليه إنتِ مميزة؟ 🌷</h2>
+
+  <div class="counter" id="counter">
+    0
+  </div>
+
+  <div class="reason" onclick="unlockReason(this)">
+    🔒 اضغطي علشان تعرفي السبب
+    <div class="reason-content">
+      ❤️ لأن وجودك لوحده بيخلّي اليوم أحلى.
+    </div>
+  </div>
+
+  <div class="reason" onclick="unlockReason(this)">
+    🔒 سبب تاني
+    <div class="reason-content">
+      😂 لأنك تقدري تخليني أبتسم حتى من غير ما تحاولي.
+    </div>
+  </div>
+
+  <div class="reason" onclick="unlockReason(this)">
+    🔒 سبب تالت
+    <div class="reason-content">
+      ✨ لأن فيكي حاجة مش عارف أوصفها بالكلام.
+    </div>
+  </div>
+
+  <div class="reason" onclick="unlockReason(this)">
+    🔒 وآخر سبب
+    <div class="reason-content">
+      🥹 لأنك بقيتي شخص مهم جدًا بالنسبة لي.
+    </div>
+  </div>
 
 </section>
 
 
-<!-- الرسالة -->
+<section class="card last">
 
-<section class="section">
+  <h2>آخر مفاجأة 👀❤️</h2>
 
-<div class="card">
+  <button onclick="openLastSurprise()">
+    اضغطي هنا
+  </button>
 
-<h2>
-تسنيم... ❤️
-</h2>
-
-<p
-id="typing"
-class="typing">
-</p>
-
-</div>
+  <p class="last-text" id="lastText">
+    إنتِ مميزة بالنسبالي، عشان معاكي حسيت إن في حد نفسي أفضل أشاركه تفاصيل أيامي، حتى الحاجات الصغيرة اللي مكنتش بفتكر إنها تستاهل تتحكي. ❤️
+  </p>
 
 </section>
 
 
-<!-- أول مرة -->
+<section class="card">
 
-<section class="section">
+  <h2>إلى تسنيم... ❤️</h2>
 
-<div class="card">
+  <div class="poem">
+ما رأيتُها يومًا، ولم أعرف ملامحها، حتى أتتني صورتُها… فارتبك القلب قبل العين.
 
-<div class="emoji-heart">
-✨
-</div>
+توقّفتُ لحظة، وكأن شيئًا في داخلي قد صمت، وقلبي انقبض من شدة الدهشة، فلم أكن مستعدًا أن أرى هذا الجمال.
 
-<h2>
-أول مرة شفتك فيها...
-</h2>
+نظرتُ إليها… فشعرتُ أنني أمام شيءٍ لا يشبه ما رأيت، كأن قطعةً من الجنة قد وصلت إلى الأرض دون أن تستأذن.
 
-<p>
+لم تكن الصدمةُ أنني رأيتُ فتاةً جميلة، بل أنني اكتشفتُ أن الجمال قد يكون أكبر من أن تصفه الكلمات.
 
-مش هكدب عليكي...
+كنتُ أظن أنني أعرف معنى «جميلة»، حتى رأيتها… فعرفتُ أنني كنتُ مخطئًا،
 
-<br><br>
-
-<span class="highlight">
-أنا اتصدمت 😂❤️
-</span>
-
-<br><br>
-
-مش عارف أوصف اللحظة دي
-إزاي،
-بس كأن عيني شافت حاجة
-مش كانت مستعدة لها أصلًا.
-
-<br><br>
-
-كأن قلبي قال لعقلي:
-
-<br>
-
-<span class="highlight">
-"هو الجمال ده بجد؟" 😂
-</span>
-
-</p>
-
-</div>
-
-</section>
-
-
-<!-- الأسباب -->
-
-<section class="section">
-
-<div class="card">
-
-<h2>
-ليه إنتِ مميزة؟ 🌷
-</h2>
-
-
-<div
-class="counter"
-id="reasonCounter">
-
-0 / 4 ❤️
-
-</div>
-
-
-<p
-id="counterMessage"
-class="counter-message">
-
-لسه في 4 أسباب مستخبيين... 👀
-
-</p>
-
-
-<div class="reasons">
-
-
-<!-- السبب 1 -->
-
-<div
-class="reason locked"
-onclick="unlockReason(this)">
-
-<div class="lock">
-🔒
-</div>
-
-<div class="reason-text">
-
-❤️
-لأن وجودك لوحده
-بيخلّي اليوم أحلى.
-
-</div>
-
-</div>
-
-
-<!-- السبب 2 -->
-
-<div
-class="reason locked"
-onclick="unlockReason(this)">
-
-<div class="lock">
-🔒
-</div>
-
-<div class="reason-text">
-
-😂
-لأنك تقدري تخليني
-أبتسم حتى من غير
-ما تحاولي.
-
-</div>
-
-</div>
-
-
-<!-- السبب 3 -->
-
-<div
-class="reason locked"
-onclick="unlockReason(this)">
-
-<div class="lock">
-🔒
-</div>
-
-<div class="reason-text">
-
-✨
-لأن فيكي حاجة
-مش عارف أوصفها
-بالكلام.
-
-</div>
-
-</div>
-
-
-<!-- السبب 4 -->
-
-<div
-class="reason locked"
-onclick="unlockReason(this)">
-
-<div class="lock">
-🔒
-</div>
-
-<div class="reason-text">
-
-🥹
-لأنك بقيتي شخص
-مهم جدًا بالنسبة لي.
-
-</div>
-
-</div>
-
-
-</div>
-
-
-<!-- آخر حاجة -->
-
-<div
-id="lastSurprise"
-class="last-surprise">
-
-
-<div
-class="last-box"
-id="lastBox"
-onclick="openLastSurprise()">
-
-
-<div
-class="last-lock"
-id="lastLock">
-
-🔒
-
-</div>
-
-
-<div class="last-title">
-
-آخر حاجة يا كوتي... 👀❤️
-
-</div>
-
-
-<div
-class="last-content"
-id="lastContent">
-
-<p>
-
-<span class="highlight">
-
-إنتِ مميزة بالنسبالي،
-عشان معاكي حسيت إن في حد
-نفسي أفضل أشاركه تفاصيل أيامي،
-حتى الحاجات الصغيرة
-اللي مكنتش بفتكر
-إنها تستاهل تتحكي.
-
-</span>
-
-<br><br>
-
-❤️
-
-</p>
-
-</div>
-
-
-</div>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<!-- الشعر -->
-
-<section class="section">
-
-<div class="card">
-
-<div class="emoji-heart">
-🌙
-</div>
-
-<h2>
-إلى تسنيم... ❤️
-</h2>
-
-
-<p class="poem">
-
-<strong>
-
-ما رأيتُها يومًا،
-ولم أعرف ملامحها،
-<br>
-
-حتى أتتني صورتُها…
-فارتبك القلب قبل العين.
-
-</strong>
-
-
-<br><br>
-
-
-توقّفتُ لحظة،
-وكأن شيئًا في داخلي قد صمت،
-
-<br>
-
-وقلبي انقبض من شدة الدهشة،
-
-<br>
-
-فلم أكن مستعدًا أن أرى
-هذا الجمال.
-
-
-<br><br>
-
-
-نظرتُ إليها…
-
-<br>
-
-فشعرتُ أنني أمام شيءٍ
-لا يشبه ما رأيت،
-
-<br>
-
-كأن قطعةً من الجنة
-
-<br>
-
-قد وصلت إلى الأرض
-دون أن تستأذن.
-
-
-<br><br>
-
-
-لم تكن الصدمةُ أنني
-رأيتُ فتاةً جميلة،
-
-<br>
-
-بل أنني اكتشفتُ أن الجمال
-
-<br>
-
-قد يكون أكبر من أن تصفه
-الكلمات.
-
-
-<br><br>
-
-
-كنتُ أظن أنني أعرف
-معنى «جميلة»،
-
-<br>
-
-حتى رأيتها…
-
-<br>
-
-فعرفتُ أنني كنتُ مخطئًا،
-
-
-<br><br>
-
-
-وأن بعض الوجوه لا تُوصف،
-
-<br>
-
-بل تجعل القلب يقف للحظة
-
-<br>
-
-وكأنه يقول:
-
-
-<br><br>
-
-
-<span class="highlight">
+وأن بعض الوجوه لا تُوصف، بل تجعل القلب يقف للحظة وكأنه يقول:
 
 ما هذا الجمال؟ ❤️
-
-</span>
-
-</p>
-
-</div>
+  </div>
 
 </section>
 
 
-<!-- النهاية -->
+<section class="card">
 
-<section class="section">
+  <h2>وفي النهاية... ❤️</h2>
 
-<div class="card">
+  <p>
+    يبقى المفاجأة نجحت 😂❤️
+  </p>
 
-<div class="emoji-heart">
-💗
-</div>
+  <p>
+    ومهما كتبت هنا، الكلام هيفضل أقل من اللي جوايا.
+  </p>
 
-<h2>
-ولو وصلتي لهنا...
-</h2>
+  <p>
+    كل اللي كنت عايز أقوله:
+  </p>
 
-<p>
-
-يبقى المفاجأة نجحت 😂❤️
-
-<br><br>
-
-ومهما كتبت هنا،
-الكلام هيفضل أقل
-من اللي جوايا.
-
-<br><br>
-
-كل اللي كنت عايز أقوله:
-
-<br><br>
-
-<span class="highlight">
-
-أنا مبسوط إنك موجودة
-في حياتي يا تسنيم. ❤️
-
-</span>
-
-</p>
-
-</div>
+  <p class="highlight">
+    أنا مبسوط إنك موجودة في حياتي يا تسنيم. ❤️
+  </p>
 
 </section>
 
 
-<!-- =========================
-     آخر لقطة في الموقع
-========================= -->
-
-<section
-class="section final-love">
-
-<div class="card">
-
-<div class="final-love-text">
-
-I LOVE YOU T ❤️
-
-</div>
-
-</div>
-
+<section class="card">
+  <div class="final-love">
+    I LOVE YOU T ❤️
+  </div>
 </section>
-
-
-</div>
 
 </main>
 
 
 <script>
 
+let audioCtx;
 
-/* =========================
-   Web Audio API
-   صوت التِك التفاعلي
-========================= */
+function sound(){
+  try{
+    audioCtx ||= new (window.AudioContext||window.webkitAudioContext)();
 
-let audioContext = null;
+    const osc=audioCtx.createOscillator();
+    const gain=audioCtx.createGain();
 
+    osc.frequency.value=600;
+    gain.gain.value=.035;
 
-function playClickSound() {
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
 
-    // إنشاء نظام الصوت عند أول تفاعل
-    if (!audioContext) {
-
-        const AudioContext =
-            window.AudioContext ||
-            window.webkitAudioContext;
-
-        if (!AudioContext) {
-            return;
-        }
-
-        audioContext =
-            new AudioContext();
-
-    }
-
-
-    // بعض المتصفحات توقف الصوت
-    // حتى يحدث تفاعل من المستخدم
-    if (
-        audioContext.state === "suspended"
-    ) {
-
-        audioContext.resume();
-
-    }
-
-
-    const oscillator =
-        audioContext.createOscillator();
-
-
-    const gain =
-        audioContext.createGain();
-
-
-    /*
-       نوع الصوت:
-       Sine = ناعم
-    */
-
-    oscillator.type =
-        "sine";
-
-
-    /*
-       بداية صوت التِك
-    */
-
-    oscillator.frequency.setValueAtTime(
-        720,
-        audioContext.currentTime
-    );
-
-
-    /*
-       نزول سريع في التردد
-       يعطي إحساس "تِك"
-    */
-
-    oscillator.frequency.exponentialRampToValueAtTime(
-        400,
-        audioContext.currentTime + 0.08
-    );
-
-
-    /*
-       رفع الصوت بسرعة
-    */
-
-    gain.gain.setValueAtTime(
-        0.0001,
-        audioContext.currentTime
-    );
-
+    osc.start();
 
     gain.gain.exponentialRampToValueAtTime(
-        0.12,
-        audioContext.currentTime + 0.01
+      .001,
+      audioCtx.currentTime+.08
     );
 
-
-    /*
-       اختفاء الصوت بسرعة
-    */
-
-    gain.gain.exponentialRampToValueAtTime(
-        0.0001,
-        audioContext.currentTime + 0.09
-    );
-
-
-    /*
-       توصيل الصوت
-    */
-
-    oscillator.connect(gain);
-
-    gain.connect(
-        audioContext.destination
-    );
-
-
-    /*
-       تشغيل الصوت
-    */
-
-    oscillator.start();
-
-
-    oscillator.stop(
-        audioContext.currentTime + 0.1
-    );
-
+    osc.stop(audioCtx.currentTime+.08);
+  }catch(e){}
 }
 
 
-/* =========================
-   بدء التجربة
-========================= */
+function startExperience(){
 
-function startExperience() {
+  document.getElementById("intro").style.display="none";
 
-    const intro =
-        document.getElementById(
-            "intro"
-        );
+  sound();
 
+  typeWriter();
 
-    const page =
-        document.getElementById(
-            "page"
-        );
-
-
-    /*
-       صوت خفيف عند البداية
-    */
-
-    playClickSound();
-
-
-    intro.classList.add(
-        "hide"
-    );
-
-
-    setTimeout(() => {
-
-        page.classList.add(
-            "show"
-        );
-
-    }, 700);
-
-
-    createHearts(30);
-
-
-    setTimeout(() => {
-
-        typeWriter();
-
-    }, 1000);
-
+  document.querySelectorAll(".card")
+    .forEach((card,i)=>{
+      setTimeout(()=>{
+        card.classList.add("show");
+      },i*120);
+    });
 }
 
 
-/* =========================
-   الكتابة
-========================= */
+function typeWriter(){
 
-function typeWriter() {
+  const text=
+  "يمكن مكنتش متوقع إن شخص يدخل حياتي بالصدفة، وبعدها يبقى وجوده من أجمل الحاجات فيها. لكن إنتِ عملتي كده يا تسنيم. بقيت أفرح لما أشوف رسالتك، وأبتسم من حاجات بسيطة بسببك، وألاقي نفسي بفكر فيكي من غير ما أخطط. يمكن مش بعرف دايمًا أقول كل اللي جوايا، لكن الحقيقة إن مكانتك عندي أكبر بكتير من الكلام. ❤️";
 
-    const text =
-        "يمكن مكنتش متوقع إن شخص يدخل حياتي بالصدفة، وبعدها يبقى وجوده من أجمل الحاجات فيها. لكن إنتِ عملتي كده يا تسنيم. بقيت أفرح لما أشوف رسالتك، وأبتسم من حاجات بسيطة بسببك، وألاقي نفسي بفكر فيكي من غير ما أخطط. يمكن مش بعرف دايمًا أقول كل اللي جوايا، لكن الحقيقة إن مكانتك عندي أكبر بكتير من الكلام. ❤️";
+  const el=document.getElementById("typeText");
 
+  let i=0;
 
-    const element =
-        document.getElementById(
-            "typing"
-        );
+  const timer=setInterval(()=>{
 
+    el.textContent=text.slice(0,++i);
 
-    let index = 0;
-
-
-    function write() {
-
-        if (
-            index <
-            text.length
-        ) {
-
-            element.innerHTML +=
-                text.charAt(index);
-
-            index++;
-
-
-            setTimeout(
-                write,
-                38
-            );
-
-        }
-
+    if(i>=text.length){
+      clearInterval(timer);
     }
 
-
-    write();
-
+  },18);
 }
 
 
-/* =========================
-   عداد الأسباب
-========================= */
+function unlockReason(element){
 
-let unlockedReasons = 0;
+  sound();
 
+  const content=
+    element.querySelector(".reason-content");
 
-/* =========================
-   فتح السبب
-========================= */
+  if(content.style.display==="block"){
+    return;
+  }
 
-function unlockReason(element) {
+  content.style.display="block";
 
-    /*
-       منع إعادة فتح نفس السبب
-    */
+  element.childNodes[0].textContent="❤️ ";
 
-    if (
-        element.classList.contains(
-            "unlocked"
-        )
-    ) {
+  const counter=
+    document.getElementById("counter");
 
-        return;
+  counter.textContent=
+    Number(counter.textContent)+1;
 
-    }
-
-
-    /*
-       تشغيل صوت التِك
-    */
-
-    playClickSound();
-
-
-    /*
-       فتح القفل
-    */
-
-    element.classList.add(
-        "unlocked"
-    );
-
-
-    const lock =
-        element.querySelector(
-            ".lock"
-        );
-
-
-    lock.innerText =
-        "🔓";
-
-
-    /*
-       انفجار القلوب
-    */
-
-    heartExplosion(
-        element
-    );
-
-
-    /*
-       تحديث العداد
-    */
-
-    unlockedReasons++;
-
-
-    const counter =
-        document.getElementById(
-            "reasonCounter"
-        );
-
-
-    const message =
-        document.getElementById(
-            "counterMessage"
-        );
-
-
-    counter.innerText =
-        unlockedReasons +
-        " / 4 ❤️";
-
-
-    counter.classList.remove(
-        "pop"
-    );
-
-
-    void counter.offsetWidth;
-
-
-    counter.classList.add(
-        "pop"
-    );
-
-
-    /*
-       رسائل العداد
-    */
-
-    if (
-        unlockedReasons === 1
-    ) {
-
-        message.innerText =
-            "واحد اتفتح... ولسه 3 مستخبيين 👀❤️";
-
-    }
-
-
-    else if (
-        unlockedReasons === 2
-    ) {
-
-        message.innerText =
-            "نص الطريق... ولسه في سببين 💕";
-
-    }
-
-
-    else if (
-        unlockedReasons === 3
-    ) {
-
-        message.innerText =
-            "قربنا جدًا... سبب واحد بس باقي 👀✨";
-
-    }
-
-
-    else if (
-        unlockedReasons === 4
-    ) {
-
-        message.innerText =
-            "خلصتي كل الأسباب... بس في حاجة أخيرة 👀❤️";
-
-
-        /*
-           إظهار آخر خانة
-        */
-
-        setTimeout(() => {
-
-            const last =
-                document.getElementById(
-                    "lastSurprise"
-                );
-
-
-            last.classList.add(
-                "show"
-            );
-
-
-            createHearts(
-                25
-            );
-
-
-            /*
-               تحريك الصفحة إليها
-            */
-
-            setTimeout(() => {
-
-                last.scrollIntoView({
-                    behavior:
-                        "smooth",
-
-                    block:
-                        "center"
-                });
-
-            }, 400);
-
-        }, 600);
-
-    }
-
+  heartExplosion(element);
 }
 
 
-/* =========================
-   فتح آخر مفاجأة
-========================= */
+function openLastSurprise(){
 
-function openLastSurprise() {
+  sound();
 
-    const box =
-        document.getElementById(
-            "lastBox"
-        );
+  document.getElementById("lastText")
+    .style.display="block";
 
-
-    /*
-       منع تكرار الفتح
-    */
-
-    if (
-        box.classList.contains(
-            "opened"
-        )
-    ) {
-
-        return;
-
-    }
-
-
-    /*
-       صوت التِك
-    */
-
-    playClickSound();
-
-
-    /*
-       فتح الخانة
-    */
-
-    box.classList.add(
-        "opened"
-    );
-
-
-    document.getElementById(
-        "lastLock"
-    ).innerText =
-        "🔓";
-
-
-    /*
-       قلوب
-    */
-
-    heartExplosion(
-        box
-    );
-
-
-    createHearts(
-        70
-    );
-
+  createHearts(12);
 }
 
 
-/* =========================
-   انفجار القلوب
-========================= */
+function heartExplosion(element){
 
-function heartExplosion(element) {
+  const rect=
+    element.getBoundingClientRect();
 
-    const rect =
-        element.getBoundingClientRect();
+  for(let i=0;i<5;i++){
 
+    const heart=
+      document.createElement("div");
 
-    const hearts = [
+    heart.className="click-heart";
+    heart.textContent="❤️";
 
-        "❤️",
-        "💗",
-        "💖",
-        "💕",
-        "💘",
-        "💓"
+    heart.style.left=
+      (rect.left+rect.width/2+Math.random()*60-30)+"px";
 
-    ];
+    heart.style.top=
+      (rect.top+rect.height/2)+"px";
 
+    document.body.appendChild(heart);
 
-    for (
-        let i = 0;
-        i < 20;
-        i++
-    ) {
-
-        const heart =
-            document.createElement(
-                "div"
-            );
-
-
-        heart.className =
-            "click-heart";
-
-
-        heart.innerText =
-            hearts[
-                Math.floor(
-                    Math.random()
-                    * hearts.length
-                )
-            ];
-
-
-        heart.style.left =
-            (
-                rect.left +
-                rect.width / 2
-            ) +
-            "px";
-
-
-        heart.style.top =
-            (
-                rect.top +
-                rect.height / 2
-            ) +
-            "px";
-
-
-        const angle =
-            Math.random()
-            * Math.PI
-            * 2;
-
-
-        const distance =
-            70 +
-            Math.random()
-            * 140;
-
-
-        const x =
-            Math.cos(angle)
-            * distance;
-
-
-        const y =
-            Math.sin(angle)
-            * distance;
-
-
-        heart.style.setProperty(
-            "--x",
-            x + "px"
-        );
-
-
-        heart.style.setProperty(
-            "--y",
-            y + "px"
-        );
-
-
-        document.body.appendChild(
-            heart
-        );
-
-
-        setTimeout(() => {
-
-            heart.remove();
-
-        }, 1300);
-
-    }
-
+    setTimeout(()=>{
+      heart.remove();
+    },1000);
+  }
 }
 
 
-/* =========================
-   قلوب طائرة
-========================= */
+function createHearts(number){
 
-function createHearts(number) {
+  for(let i=0;i<number;i++){
 
-    const emojis = [
+    const heart=
+      document.createElement("div");
 
-        "❤️",
-        "💗",
-        "💖",
-        "💕",
-        "💘",
-        "🌷",
-        "✨"
+    heart.className="float-heart";
+    heart.textContent=
+      Math.random()>.5 ? "❤️" : "💕";
 
-    ];
+    heart.style.left=
+      Math.random()*100+"vw";
 
+    heart.style.fontSize=
+      (14+Math.random()*14)+"px";
 
-    for (
-        let i = 0;
-        i < number;
-        i++
-    ) {
+    heart.style.animationDuration=
+      (4+Math.random()*3)+"s";
 
-        const heart =
-            document.createElement(
-                "div"
-            );
+    document.body.appendChild(heart);
 
-
-        heart.className =
-            "floating-heart";
-
-
-        heart.innerText =
-            emojis[
-                Math.floor(
-                    Math.random()
-                    * emojis.length
-                )
-            ];
-
-
-        heart.style.left =
-            Math.random()
-            * 100 +
-            "vw";
-
-
-        heart.style.fontSize =
-            (
-                15 +
-                Math.random()
-                * 25
-            ) +
-            "px";
-
-
-        heart.style.animationDuration =
-            (
-                4 +
-                Math.random()
-                * 5
-            ) +
-            "s";
-
-
-        document.body.appendChild(
-            heart
-        );
-
-
-        setTimeout(() => {
-
-            heart.remove();
-
-        }, 10000);
-
-    }
-
+    setTimeout(()=>{
+      heart.remove();
+    },7000);
+  }
 }
 
 
-/* =========================
-   ظهور الكروت
-========================= */
+const observer=
+  new IntersectionObserver(entries=>{
 
-const observer =
-    new IntersectionObserver(
+    entries.forEach(entry=>{
 
-        (entries) => {
+      if(entry.isIntersecting){
+        entry.target.classList.add("show");
+      }
 
-            entries.forEach(
-                (entry) => {
+    });
 
-                    if (
-                        entry.isIntersecting
-                    ) {
-
-                        entry.target
-                            .classList
-                            .add(
-                                "visible"
-                            );
-
-                    }
-
-                }
-            );
-
-        },
-
-        {
-            threshold: .25
-        }
-
-    );
+  },{threshold:.15});
 
 
-document
-    .querySelectorAll(
-        ".card"
-    )
-    .forEach(
-        (card) => {
-
-            observer.observe(
-                card
-            );
-
-        }
-    );
+document.querySelectorAll(".card")
+  .forEach(card=>observer.observe(card));
 
 
-/* =========================
-   قلوب تلقائية
-========================= */
-
-setInterval(() => {
-
-    createHearts(1);
-
-}, 1500);
-
+setInterval(()=>{
+  createHearts(1);
+},1800);
 
 </script>
 
 </body>
+</html>
+</textarea>
 
+
+<script>
+/* ==========================================================
+   التحكم في المشروع الجديد
+========================================================== */
+
+function showScreen(id){
+
+  document.querySelectorAll(".screen")
+    .forEach(screen=>{
+      screen.classList.remove("active");
+    });
+
+  const target=document.getElementById(id);
+
+  if(target){
+    target.classList.add("active");
+  }
+
+  window.scrollTo(0,0);
+}
+
+
+/* =========================
+   شاشة الاعتراف
+========================= */
+
+function startLove(){
+
+  showScreen("love");
+
+  const reveal=
+    document.getElementById("reveal");
+
+  const loveText=
+    document.getElementById("loveText");
+
+  const button=
+    document.getElementById("continueBtn");
+
+  reveal.textContent="";
+  loveText.textContent="";
+  button.style.display="none";
+
+  let text="أنا";
+  let i=0;
+
+  const first=setInterval(()=>{
+
+    reveal.textContent=text.slice(0,++i);
+
+    if(i>=text.length){
+
+      clearInterval(first);
+
+      setTimeout(()=>{
+        dots();
+      },500);
+    }
+
+  },300);
+
+
+  function dots(){
+
+    let dotsText="";
+    let count=0;
+
+    const timer=setInterval(()=>{
+
+      dotsText+=".";
+      reveal.textContent="أنا"+dotsText;
+
+      count++;
+
+      if(count>=3){
+
+        clearInterval(timer);
+
+        setTimeout(()=>{
+          longLove();
+        },500);
+
+      }
+
+    },450);
+  }
+
+
+  function longLove(){
+
+    reveal.textContent="";
+
+    const line1="بحب"+"ا".repeat(24);
+    const line2="ا".repeat(25);
+    const line3="ا".repeat(25);
+    const line4="ا".repeat(25)+"ك";
+
+    reveal.innerHTML=
+      line1+"<br>"+
+      line2+"<br>"+
+      line3+"<br>"+
+      line4;
+
+    setTimeout(()=>{
+
+      loveText.innerHTML=
+        "واتعلقت بيكي جدًا ❤️<br>"+
+        "وحرفيًا إنتِ وكل دماغي يا روحي ❤️<br>"+
+        "وبقيت مغرم في حبك ❤️";
+
+      button.style.display="inline-block";
+
+    },1000);
+  }
+}
+
+
+/* =========================
+   مصايبي
+========================= */
+
+function showMishap(){
+  showScreen("mishap");
+}
+
+
+/* =========================
+   Soon
+========================= */
+
+function soon(){
+
+  alert(
+    "لسه بدري عليها 😂❤️\n\nاستني المفاجآت الجاية 😉"
+  );
+
+}
+
+
+/* ==========================================================
+   فتح المشروع القديم
+========================================================== */
+
+function openOldProject(){
+
+  const old=
+    document.getElementById("oldProject");
+
+  const frame=
+    document.getElementById("oldFrame");
+
+  const source=
+    document.getElementById("oldSource").value;
+
+  /*
+    تحميل المشروع القديم داخل iframe
+    يخلي CSS وJS بتوعه منفصلين تمامًا
+    عن المشروع الجديد.
+  */
+
+  frame.srcdoc=source;
+
+  old.classList.add("active");
+
+  document.body.style.overflow="hidden";
+}
+
+
+/* ==========================================================
+   الرجوع من المشروع القديم
+========================================================== */
+
+function closeOldProject(){
+
+  const old=
+    document.getElementById("oldProject");
+
+  const frame=
+    document.getElementById("oldFrame");
+
+  old.classList.remove("active");
+
+  /*
+    تفريغ الـ iframe بعد الخروج
+    لتقليل استهلاك الذاكرة.
+  */
+
+  frame.srcdoc="";
+
+  document.body.style.overflow="hidden";
+
+  showScreen("menu");
+}
+
+</script>
+
+</body>
 </html>
